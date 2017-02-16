@@ -1,5 +1,6 @@
 package com.davidroach.assignment2simon;
 
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.widget.Button;
@@ -19,6 +20,7 @@ public class GameActivity extends AppCompatActivity {
     int patternCount;
 
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -31,6 +33,10 @@ public class GameActivity extends AppCompatActivity {
 
         pattern = new int[100]; //100 should be a long enough pattern.
         patternCount = 0;
+
+        play();
+
+
 
 
 
@@ -48,6 +54,30 @@ public class GameActivity extends AppCompatActivity {
 
     }
 
+    private class GameTask extends AsyncTask<Void, Void, Void>{
+
+        @Override
+        protected Void doInBackground(Void... params) {
+            return null;
+        }
+
+
+        @Override
+        protected void onProgressUpdate(Void... values) {
+            super.onProgressUpdate(values);
+        }
+
+
+        @Override
+        protected void onPostExecute(Void aVoid) {
+            super.onPostExecute(aVoid);
+        }
+    }
+
+
+ void play(){
+
+ }
 
 
 }

@@ -21,8 +21,8 @@ public class Start extends AppCompatActivity {
         findViewById(R.id.play_button).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //Go to GameActivity
-                Intent intent = new Intent(getApplicationContext(), GameActivity.class);
+                //Go to Mode Activity
+                Intent intent = new Intent(getApplicationContext(), ModeActivity.class);
                 startActivity(intent);
             }
         });
