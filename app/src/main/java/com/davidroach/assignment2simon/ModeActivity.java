@@ -34,16 +34,34 @@ public class ModeActivity extends AppCompatActivity {
         Button playerAddButton = (Button) findViewById(R.id.playeradds_button);
         Button chooseColorButton = (Button) findViewById(R.id.choosecolor_button);
 
+        simonSaysButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                goToGame(Mode.SIMON_SAYS);
+            }
+        });
+
+        playerAddButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                goToGame(Mode.PLAYER_ADDS);
+            }
+        });
+
+        chooseColorButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                goToGame(Mode.CHOOSE_YOUR_COLOR);
+            }
+        });
+
 
     }
 
     private void goToGame(Mode modeIn){
         //Pass game mode Go to Mode Activity
         Intent intent = new Intent(getApplicationContext(), GameActivity.class);
-
         intent.putExtra("GAMEMODE", modeIn);
-
-
         startActivity(intent);
     }
 }
