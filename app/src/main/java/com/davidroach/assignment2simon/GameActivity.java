@@ -18,8 +18,11 @@ public class GameActivity extends AppCompatActivity {
     Button yellowButton;
     Button blueButton;
 
+    String modeResult;
+
     int[] pattern;
     int patternCount;
+    int playerScore = 0;
 
 
 
@@ -33,22 +36,21 @@ public class GameActivity extends AppCompatActivity {
         //get game mode selection
         Intent intentIn = getIntent();
 
-        String result = intentIn.getStringExtra("GAMEMODE");
+         modeResult = intentIn.getStringExtra("GAMEMODE");
 
-        Log.i("MODE_IN","->>" + result); //debug code
+        Log.i("MODE_IN","->>" + modeResult); //debug code
+
 
         greenButton = (Button) findViewById(R.id.green_button);
         redButton = (Button) findViewById(R.id.red_button);
         yellowButton = (Button) findViewById(R.id.yellow_button);
         blueButton = (Button) findViewById(R.id.blue_button);
 
+
         pattern = new int[100]; //100 should be a long enough pattern.
         patternCount = 0;
 
-        play();
-
-
-
+        play(modeResult);
 
 
     }
@@ -57,7 +59,25 @@ public class GameActivity extends AppCompatActivity {
 
 
 
-    private void lightButton(int buttonId){
+    private void lightButton(int buttonIdIn){
+
+        if(buttonIdIn == R.id.red_button){
+            redButton.setBackgroundColor(android.graphics.Color.WHITE);
+
+        }
+        if(buttonIdIn == R.id.blue_button){
+            blueButton.setBackgroundColor(android.graphics.Color.WHITE);
+
+        }
+        if(buttonIdIn == R.id.green_button){
+            greenButton.setBackgroundColor(android.graphics.Color.WHITE);
+
+        }
+        if(buttonIdIn == R.id.yellow_button){
+            yellowButton.setBackgroundColor(android.graphics.Color.WHITE);
+
+        }
+
 
     }
 
@@ -86,9 +106,48 @@ public class GameActivity extends AppCompatActivity {
     }
 
 
- void play(){
+ void play( String modeIn){
+
+     /* Checks game mode and starts appropriate method*/
+
+     if(modeIn.equals("SIMON_SAYS")){
+         simonSays();
+
+     }
+     else if(modeIn.equals("PLAYER_ADDS")){
+         playerAdds();
+     }
+     else if(modeIn.equals("CHOOSE_YOUR_COLOR")){
+         chooseYourColor();
+
+     }
 
  }
+
+
+    void simonSays(){
+
+        Log.i("MODE: ", modeResult);
+
+
+    }
+
+
+    void playerAdds(){
+        Log.i("MODE: ", modeResult);
+
+
+
+
+    }
+
+
+    void chooseYourColor(){
+        Log.i("MODE: ", modeResult);
+
+        
+
+    }
 
 
 }
