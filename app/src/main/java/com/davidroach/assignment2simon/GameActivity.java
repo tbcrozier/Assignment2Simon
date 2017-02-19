@@ -4,6 +4,8 @@ import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.widget.Button;
+import android.content.Intent;
+import android.util.Log;
 
 /**
  * Created by droach-dev on 2/15/17.
@@ -21,10 +23,19 @@ public class GameActivity extends AppCompatActivity {
 
 
 
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_game);
+
+        //get game mode selection
+        Intent intentIn = getIntent();
+
+        String result = intentIn.getStringExtra("GAMEMODE");
+
+        Log.i("MODE_IN","->>" + result); //debug code
 
         greenButton = (Button) findViewById(R.id.green_button);
         redButton = (Button) findViewById(R.id.red_button);

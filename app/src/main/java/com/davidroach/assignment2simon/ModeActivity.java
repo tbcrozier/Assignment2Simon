@@ -13,11 +13,20 @@ import android.widget.Button;
 
 public class ModeActivity extends AppCompatActivity {
 
-    private enum Mode{
-        SIMON_SAYS,
-        PLAYER_ADDS,
-        CHOOSE_YOUR_COLOR
-    }
+
+    private enum Mode {
+        SIMON_SAYS("SIMON_SAYS"),
+        PLAYER_ADDS("PLAYER_ADDS"),
+        CHOOSE_YOUR_COLOR("CHOOSE_YOUR_COLOR");
+
+        private final String name;
+
+        private Mode(String s) {
+            name = s;
+           }
+        }
+
+
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -26,6 +35,8 @@ public class ModeActivity extends AppCompatActivity {
         /* Disable title bar */
         this.requestWindowFeature(Window.FEATURE_NO_TITLE);
         setContentView(R.layout.activity_mode);
+
+
 
         //Mode buttons
         //Pass game mode to next activity
@@ -61,7 +72,7 @@ public class ModeActivity extends AppCompatActivity {
     private void goToGame(Mode modeIn){
         //Pass game mode Go to Mode Activity
         Intent intent = new Intent(getApplicationContext(), GameActivity.class);
-        intent.putExtra("GAMEMODE", modeIn);
+        intent.putExtra("GAMEMODE", modeIn.name);
         startActivity(intent);
     }
 }
