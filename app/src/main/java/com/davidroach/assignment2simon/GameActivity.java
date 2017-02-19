@@ -28,6 +28,7 @@ public class GameActivity extends AppCompatActivity {
 
 
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -145,7 +146,7 @@ public class GameActivity extends AppCompatActivity {
     void chooseYourColor(){
         Log.i("MODE: ", modeResult);
 
-        
+
 
     }
 
