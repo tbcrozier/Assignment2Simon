@@ -8,6 +8,8 @@ import android.view.Window;
 
 public class Start extends AppCompatActivity {
 
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -16,13 +18,16 @@ public class Start extends AppCompatActivity {
         this.requestWindowFeature(Window.FEATURE_NO_TITLE);
         setContentView(R.layout.activity_start);
 
+        /* Get intent Data*/
+
+
         //Setup button call backs
 
         findViewById(R.id.play_button).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //Go to GameActivity
-                Intent intent = new Intent(getApplicationContext(), GameActivity.class);
+                //Go to Mode Activity
+                Intent intent = new Intent(getApplicationContext(), ModeActivity.class);
                 startActivity(intent);
             }
         });
