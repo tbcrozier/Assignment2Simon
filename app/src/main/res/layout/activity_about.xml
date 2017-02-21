@@ -3,12 +3,20 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:id="@+id/activity_about"
-    >
+    android:background="@color/colorBlack">
+
+
 
     <TextView
-        android:text="About"
-        android:layout_width="match_parent"
+        android:text="@string/about_title"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/textView2" />
+        android:layout_marginTop="38dp"
+        android:id="@+id/about_title_tv"
+        android:textColor="@android:color/white"
+        android:textSize="40sp"
+        android:layout_gravity="center_horizontal" />
+
+
+
 </LinearLayout>
