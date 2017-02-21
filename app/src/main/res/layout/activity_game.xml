@@ -12,6 +12,7 @@
 
     <Button
         android:text="Green"
+        android:background="@color/colorGreen"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
@@ -22,6 +23,7 @@
 
     <Button
         android:text="Yellow"
+        android:background="@color/colorYellow"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="88dp"
@@ -31,6 +33,7 @@
 
     <Button
         android:text="Blue"
+        android:background="@color/colorBlue"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignEnd="@+id/red_button"
@@ -39,6 +42,7 @@
 
     <Button
         android:text="Red"
+        android:background="@color/colorRed"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="50dp"
