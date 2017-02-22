@@ -4,4 +4,6 @@
     <string name="simon_says">Simon Says</string>
     <string name="player_adds">Player Adds</string>
     <string name="choose_color">Choose Your Color</string>
+    <string name="you_lose">You Lose! Try Again?</string>
+
 </resources>
