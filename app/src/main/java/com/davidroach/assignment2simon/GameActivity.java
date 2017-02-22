@@ -50,6 +50,8 @@ public class GameActivity extends AppCompatActivity {
         Log.i("MODE_IN","->>" + modeResult); //debug code
 
 
+
+
         greenButton = (Button) findViewById(R.id.green_button);
         redButton = (Button) findViewById(R.id.red_button);
         yellowButton = (Button) findViewById(R.id.yellow_button);
@@ -81,6 +83,9 @@ public class GameActivity extends AppCompatActivity {
      /* Checks game mode and starts appropriate method*/
 
      if(modeIn.equals("SIMON_SAYS")){
+
+         /* Fill pattern array with 100 random values that range between 1 and 4 */
+         ssGeneratePattern();
          simonSays();
 
      }
@@ -101,8 +106,9 @@ public class GameActivity extends AppCompatActivity {
 
         Log.i("MODE: ", modeResult);
 
+
         /* Fill pattern array with 100 random values that range between 1 and 4 */
-        generatePattern();
+        //ssGeneratePattern();
 
 
         /* Computer play pattern */
@@ -148,7 +154,7 @@ public class GameActivity extends AppCompatActivity {
 
     }
 
-    void ssInputCheck(int buttonIdIn){
+    int ssInputCheck(int buttonIdIn){
 
             Log.i("METHOD:", "ssInputCheck()");
 
@@ -158,6 +164,7 @@ public class GameActivity extends AppCompatActivity {
 
             if(colorCode != pattern[turnPosition]){
                 playerLoses();
+                return 0;
             }
 
 
@@ -165,13 +172,18 @@ public class GameActivity extends AppCompatActivity {
             /*Check if turn is over*/
         if(turnPosition == patternCount) {
             turnPosition = 0;
-            simonSays();
-        }
             patternCount++;
+            nap(1200);
+            simonSays();
+            return 0;
+        }else {
+
             playerScore++;
 
 
-        nap(1200);
+            nap(1200);
+            return 0;
+        }
 
     }
 
@@ -218,7 +230,7 @@ public class GameActivity extends AppCompatActivity {
     */
 
 
-    void generatePattern(){
+    void ssGeneratePattern(){
         /* Creates 100 color pattern for Simon Says mode */
 
         Random random = new Random();
@@ -242,7 +254,10 @@ public class GameActivity extends AppCompatActivity {
             for( int x = 0; x < patternCount; x++){
                 Log.i("X = ", "" + x);
 
-                final int x2 = x;
+                final int x2 = x;  //PROBLEM HERE
+
+
+                int y=1+1;
 
                 runOnUiThread(new Runnable() {
                     @Override
