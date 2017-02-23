@@ -1,4 +1,5 @@
 <resources>
+
 <string name="app_name">Assignment2Simon</string>
 <string name="about_title">Simon App</string>
 <string name="about_game">Simon is a game of memory and wits!</string>
@@ -17,4 +18,8 @@
 <string name="play_simon_button">Play Simon</string>
 <string name="about_simon_button">About Simon</string>
 <string name="exit_button">Exit</string>
+<string name="app_name">Assignment2Simon</string>
+<string name="mode_question">Choose game mode:</string>
+<string name="you_lose">You Lose! Try Again?</string>
+
 </resources>

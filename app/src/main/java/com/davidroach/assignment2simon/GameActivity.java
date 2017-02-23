@@ -1,12 +1,15 @@
 package com.davidroach.assignment2simon;
 
+import android.graphics.Color;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.view.View;
 import android.widget.Button;
 import android.content.Intent;
 import android.util.Log;
 import java.util.Random;
+import 	android.app.AlertDialog;
 
 /**
  * Created by droach-dev on 2/15/17.
@@ -25,7 +28,8 @@ public class GameActivity extends AppCompatActivity {
 
     int[] pattern;
 
-    int patternCount = 0;
+    int patternCount = 1;
+    int turnPosition = 0;
     int playerScore = 0;
 
 
@@ -45,15 +49,13 @@ public class GameActivity extends AppCompatActivity {
 
         Log.i("MODE_IN","->>" + modeResult); //debug code
 
-
         greenButton = (Button) findViewById(R.id.green_button);
         redButton = (Button) findViewById(R.id.red_button);
         yellowButton = (Button) findViewById(R.id.yellow_button);
         blueButton = (Button) findViewById(R.id.blue_button);
-
-
+        playerScore = 0;
         pattern = new int[100]; //100 should be a long enough pattern.
-        patternCount = 0;
+
 
         play(modeResult);
 
@@ -61,6 +63,247 @@ public class GameActivity extends AppCompatActivity {
     }
 
 
+
+
+
+
+    private void playSound(int buttonId){
+
+    }
+
+
+
+ void play( String modeIn){
+
+     /* Checks game mode and starts appropriate method*/
+
+     if(modeIn.equals("SIMON_SAYS")){
+         /* Fill pattern array with 100 random values that range between 1 and 4 */
+         ssGeneratePattern();
+         simonSays();
+     }
+     else if(modeIn.equals("PLAYER_ADDS")){
+         playerAdds();
+     }
+     else if(modeIn.equals("CHOOSE_YOUR_COLOR")){
+         chooseYourColor();
+     }
+
+ }
+
+
+
+
+
+
+    void playerAdds(){
+        Log.i("MODE: ", modeResult);
+
+        /* bot turn */
+        paBotPlay();
+
+        /* Setup onclicks for each button */
+        greenButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                paInputCheck(R.id.green_button);
+            }
+        });
+
+        redButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                paInputCheck(R.id.red_button);
+            }
+        });
+
+        blueButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                paInputCheck(R.id.blue_button);
+            }
+        });
+
+        yellowButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                paInputCheck(R.id.yellow_button);
+            }
+        });
+
+    }
+
+
+    /* Checks User input in "Player Add" Mode */
+    private int paInputCheck(int buttonIdIn){
+
+
+        return 0;
+    }
+
+
+    /* Bot Play input in "Player Add" Mode */
+    private void paBotPlay(){
+        Log.i("PA_BOTPLAY:","STARTED");
+
+    }
+
+
+
+    void chooseYourColor(){
+        Log.i("MODE: ", modeResult);
+
+
+
+    }
+
+
+    void simonSays(){
+
+        /* Computer play pattern */
+        ssBotPlay();
+
+        /* Setup onclicks for each button */
+        greenButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                ssInputCheck(R.id.green_button);
+            }
+        });
+
+        redButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                ssInputCheck(R.id.red_button);
+            }
+        });
+
+        blueButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                ssInputCheck(R.id.blue_button);
+            }
+        });
+
+        yellowButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                ssInputCheck(R.id.yellow_button);
+            }
+        });
+
+    }
+
+    int ssInputCheck(int buttonIdIn){
+
+        Log.i("METHOD:", "ssInputCheck()");
+
+        int colorCode  = getColorCode(buttonIdIn);
+
+            /*check if button input is the one */
+
+        if(colorCode != pattern[turnPosition]){
+            playerLoses();
+            return 0;
+        }
+
+
+        turnPosition++;
+            /*Check if turn is over*/
+        if(turnPosition == patternCount) {
+            turnPosition = 0;
+            patternCount++;
+            nap(1200);
+            simonSays();
+            return 0;
+        }else {
+
+            playerScore++;
+
+
+            nap(1200);
+            return 0;
+        }
+
+    }
+
+
+    void ssBotPlay(){
+        //Start BotPlay thread
+        Log.i("ssBOT PLAY:", "Started");
+        ssBotTask botTurn =  new ssBotTask();
+        botTurn.execute();
+    }
+
+
+    void ssGeneratePattern(){
+        /* Creates 100 color pattern for Simon Says mode */
+
+        Random random = new Random();
+        for(int x = 0; x<100; x++) {
+            pattern[x] = random.nextInt(4 - 1 + 1) + 1;
+        }
+    }
+
+
+
+
+
+
+
+
+    int getButtonId(int colorCodeIn){
+        if(colorCodeIn == 1){
+            return R.id.green_button;
+        }
+        else if (colorCodeIn == 2) {
+
+            return R.id.red_button;
+        }
+        else if(colorCodeIn == 3){
+            return R.id.yellow_button;
+        }
+        else if(colorCodeIn == 4){
+            return R.id.blue_button;
+        }
+        else {
+
+            Log.i("getButtonId:", "Unknown color code.");
+            return 99;  //should never be returned.
+        }
+
+    }
+
+
+    int getColorCode(int buttonIdIn){
+        if(buttonIdIn == R.id.green_button){
+            return 1;
+        }
+        else if (buttonIdIn == R.id.red_button) {
+
+            return 2;
+        }
+        else if(buttonIdIn == R.id.yellow_button){
+            return 3;
+        }
+        else if(buttonIdIn == R.id.blue_button){
+            return 4;
+        }
+        else {
+
+            Log.i("getButtonId:", "Unknown button id.");
+            return 99;  //should never be returned.
+        }
+
+    }
+    void nap(int time){
+        try {
+            Thread.sleep(time);
+        }
+        catch(InterruptedException e){
+            e.printStackTrace();
+        }
+    }
 
 
 
@@ -86,135 +329,45 @@ public class GameActivity extends AppCompatActivity {
 
     private void turnOffButton(int buttonIdIn){
         if(buttonIdIn == R.id.red_button){
-            redButton.setBackgroundResource(android.R.drawable.btn_default);
+            redButton.setBackgroundColor(Color.RED);
         }
         if(buttonIdIn == R.id.blue_button){
-            blueButton.setBackgroundResource(android.R.drawable.btn_default);
+            blueButton.setBackgroundColor(Color.BLUE);
         }
         if(buttonIdIn == R.id.green_button){
-            greenButton.setBackgroundResource(android.R.drawable.btn_default);
+            greenButton.setBackgroundColor(Color.GREEN);
 
         }
         if(buttonIdIn == R.id.yellow_button){
-            yellowButton.setBackgroundResource(android.R.drawable.btn_default);
+            yellowButton.setBackgroundColor(Color.YELLOW);
         }
     }
 
-    private void playSound(int buttonId){
 
-    }
+   void showYouLoseDialog(){
+       Log.i("METHOD:", "showYouLoseDialog()");
+       // 1. Instantiate an AlertDialog.Builder with its constructor
+       AlertDialog.Builder builder = new AlertDialog.Builder(getApplicationContext());
+
+        // 2. Chain together various setter methods to set the dialog characteristics
+       builder.setMessage(R.string.you_lose);
 
 
-    /*
-    private class GameTask extends AsyncTask<Void, Void, Void>{
+        // 3. Get the AlertDialog from create()
+       AlertDialog dialog = builder.create();
+   }
+
+
+
+    class paBotTask extends AsyncTask<Void, Void, Void>{
 
         @Override
         protected Void doInBackground(Void... params) {
+
             return null;
         }
 
-
-        @Override
-        protected void onProgressUpdate(Void... values) {
-            super.onProgressUpdate(values);
-        }
-
-
-        @Override
-        protected void onPostExecute(Void aVoid) {
-            super.onPostExecute(aVoid);
-        }
-    }
-*/
-
- void play( String modeIn){
-
-     /* Checks game mode and starts appropriate method*/
-
-     if(modeIn.equals("SIMON_SAYS")){
-         simonSays();
-
-     }
-     else if(modeIn.equals("PLAYER_ADDS")){
-         playerAdds();
-     }
-     else if(modeIn.equals("CHOOSE_YOUR_COLOR")){
-         chooseYourColor();
-
-     }
-
- }
-
-
-    void simonSays(){
-
-        Log.i("MODE: ", modeResult);
-
-        /* Fill pattern array with 100 random values that range between 1 and 4 */
-        generatePattern();
-
-
-
-
-        /* Computer play pattern */
-            botPlay();
-
-
-        /* User try */
-            userPlay();
-
-        //patternCount++;
-
-
-    }
-
-
-    void playerAdds(){
-        Log.i("MODE: ", modeResult);
-
-
-
-
-    }
-
-
-    void chooseYourColor(){
-        Log.i("MODE: ", modeResult);
-
-
-
-    }
-
-    void botPlay(){
-
-        //Start BotPlay thread
-        Log.i("BOT PLAY:", "Started");
-        ssBotTask botTurn =  new ssBotTask();
-        botTurn.execute();
-
-
-    }
-
-    int userPlay(){
-        //will return zero if user is right
-        return 0;
-    }
-
-
-    void generatePattern(){
-        /* Creates 100 color pattern for Simon Says mode */
-
-        Random random = new Random();
-        for(int x = 0; x<100; x++) {
-            pattern[x] = random.nextInt(4 - 1 + 1) + 1;
-        }
-    }
-
-
-    /* may not be needed */
-    int checkButtonPlayed(){
-        return 0;
-    }
+    }//end  pa async task
 
 
     class ssBotTask extends AsyncTask<Void, Void, Void>{
@@ -222,10 +375,11 @@ public class GameActivity extends AppCompatActivity {
         @Override
         protected Void doInBackground(Void... params) {
 
-            for( int x = 0; x <= patternCount; x++){
+            for( int x = 0; x < patternCount; x++){
                 Log.i("X = ", "" + x);
 
-                final int x2 = x;
+                final int x2 = x;  //PROBLEM HERE
+                 int y=1+1;
 
                 runOnUiThread(new Runnable() {
                     @Override
@@ -236,7 +390,7 @@ public class GameActivity extends AppCompatActivity {
                     }
                 });
 
-                nap();
+                nap(700);
 
                 runOnUiThread(new Runnable() {
                     @Override
@@ -245,43 +399,17 @@ public class GameActivity extends AppCompatActivity {
                         turnOffButton(getButtonId(colorCode));
                     }
                 });
-
             }
-            patternCount++;
             return null;
         }
 
-    }//end async task
+    }//end ss async task
 
 
-
-    int getButtonId(int colorCodeIn){
-        if(colorCodeIn == 1){
-            return R.id.green_button;
-        }
-        if (colorCodeIn == 2) {
-
-            return R.id.red_button;
-        }
-        if(colorCodeIn == 3){
-            return R.id.yellow_button;
-        }
-        if(colorCodeIn == 4){
-            return R.id.blue_button;
-        }
-
-        Log.i("getButtonId:","Unknown color code.");
-        return 99;  //should never be returned.
-
+    /* If this stays Redundant fix it.  Right now no time.*/
+    void playerLoses(){
+        showYouLoseDialog();
     }
 
-    void nap(){
-        try {
-            Thread.sleep(700);
-        }
-        catch(InterruptedException e){
-            e.printStackTrace();
-        }
-    }
 
 }
