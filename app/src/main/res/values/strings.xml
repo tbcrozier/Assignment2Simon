@@ -11,7 +11,7 @@
 <string name="red_color">Red</string>
 <string name="green_color">Green</string>
 <string name="yellow_color">Yellow</string>
-<string name="about_game_name_1_tv"> - Simon Says - </string>
-<string name="about_game_name_2_tv"> - Player Adds - </string>
-<string name="about_game_name_3_tv"> - Choose Colors - </string>
+<string name="about_game_name_1_tv">Simon Says</string>
+<string name="about_game_name_2_tv">Player Adds</string>
+<string name="about_game_name_3_tv">Choose Colors</string>
 </resources>

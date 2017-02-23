@@ -1,0 +1,262 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:background="@color/colorBlack"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <!--This layout does the top horizontal colorful frame edging-->
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="10dp"
+        android:baselineAligned="false"
+        android:weightSum="4">
+
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/colorGreen"
+            android:layout_weight="1">
+        </LinearLayout>
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/colorYellow"
+            android:layout_weight="1">
+        </LinearLayout>
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/colorBlue"
+            android:layout_weight="1">
+        </LinearLayout>
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/colorRed"
+            android:layout_weight="1">
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <TextView
+        android:text="@string/about_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/about_title_tv"
+        android:textColor="@android:color/white"
+        android:textSize="40sp"
+        android:layout_gravity="center_vertical|center_horizontal|center"
+        android:fontFamily="monospace"
+        android:typeface="monospace"
+        android:textStyle="normal|bold"
+        android:gravity="center_horizontal" />
+
+    <!--This layout does bottom horizontal colorful frame edging-->
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="10dp"
+        android:baselineAligned="false"
+        android:weightSum="4">
+
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/colorGreen"
+            android:layout_weight="1">
+        </LinearLayout>
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/colorYellow"
+            android:layout_weight="1">
+        </LinearLayout>
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/colorBlue"
+            android:layout_weight="1">
+        </LinearLayout>
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/colorRed"
+            android:layout_weight="1">
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <TextView
+        android:text="@string/about_game"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/about_game_tv"
+        android:textColor="@android:color/white"
+        android:textSize="20sp"
+        android:layout_gravity="center_vertical|center_horizontal|center"
+        android:fontFamily="monospace"
+        android:typeface="monospace"
+        android:textStyle="normal|bold"
+        android:gravity="center_horizontal"
+        android:paddingTop="5dp" />
+
+    <!--This layout does bottom horizontal colorful frame edging-->
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="10dp"
+        android:baselineAligned="false"
+        android:weightSum="4">
+
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/colorGreen"
+            android:layout_weight="1">
+        </LinearLayout>
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/colorYellow"
+            android:layout_weight="1">
+        </LinearLayout>
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/colorBlue"
+            android:layout_weight="1">
+        </LinearLayout>
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/colorRed"
+            android:layout_weight="1">
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <TextView
+        android:text="@string/about_mode"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/about_mode_tv"
+        android:textColor="@android:color/white"
+        android:textSize="20sp"
+        android:layout_gravity="center_vertical|center_horizontal|center"
+        android:fontFamily="monospace"
+        android:typeface="monospace"
+        android:textStyle="normal|bold"
+        android:gravity="center_horizontal"
+        android:paddingTop="5dp" />
+
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:baselineAligned="false"
+        android:weightSum="3">
+    <!--These are textviews describing the different game modes-->
+    <TextView
+        android:text="@string/about_game_name_1_tv"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/about_game_name_1_tv"
+        android:textColor="@android:color/white"
+        android:textSize="20sp"
+        android:layout_gravity="center_vertical|center_horizontal|center"
+        android:fontFamily="monospace"
+        android:typeface="monospace"
+        android:textStyle="normal|bold"
+        android:gravity="center_horizontal"
+        android:paddingTop="5dp"
+        android:layout_weight="1"/>
+    <TextView
+        android:text="@string/about_game_name_2_tv"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/about_game_name_2_tv"
+        android:textColor="@android:color/white"
+        android:textSize="20sp"
+        android:layout_gravity="center_vertical|center_horizontal|center"
+        android:fontFamily="monospace"
+        android:typeface="monospace"
+        android:textStyle="normal|bold"
+        android:gravity="center_horizontal"
+        android:paddingTop="5dp"
+        android:layout_weight="1" />
+    <TextView
+        android:text="@string/about_game_name_3_tv"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/about_game_name_3_tv"
+        android:textColor="@android:color/white"
+        android:textSize="20sp"
+        android:layout_gravity="center_vertical|center_horizontal|center"
+        android:fontFamily="monospace"
+        android:typeface="monospace"
+        android:textStyle="normal|bold"
+        android:gravity="center_horizontal"
+        android:paddingTop="5dp"
+        android:layout_weight="1"/>
+
+        </LinearLayout>
+
+    <!--This layout does bottom horizontal colorful frame edging-->
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="10dp"
+        android:baselineAligned="false"
+        android:weightSum="4">
+
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/colorGreen"
+            android:layout_weight="1">
+        </LinearLayout>
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/colorYellow"
+            android:layout_weight="1">
+        </LinearLayout>
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/colorBlue"
+            android:layout_weight="1">
+        </LinearLayout>
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/colorRed"
+            android:layout_weight="1">
+        </LinearLayout>
+
+    </LinearLayout>
+
+</LinearLayout>
