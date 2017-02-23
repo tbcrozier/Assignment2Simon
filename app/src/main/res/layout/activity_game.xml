@@ -11,7 +11,7 @@
     tools:context="com.davidroach.assignment2simon.Start">
 
     <Button
-        android:text="Green"
+        android:text="@string/green_color"
         android:background="@color/colorGreen"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -22,7 +22,7 @@
         android:id="@+id/green_button" />
 
     <Button
-        android:text="Yellow"
+        android:text="@string/yellow_color"
         android:background="@color/colorYellow"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -32,7 +32,7 @@
         android:layout_alignStart="@+id/green_button" />
 
     <Button
-        android:text="Blue"
+        android:text="@string/blue_color"
         android:background="@color/colorBlue"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -41,7 +41,7 @@
         android:layout_alignTop="@+id/yellow_button" />
 
     <Button
-        android:text="Red"
+        android:text="@string/red_color"
         android:background="@color/colorRed"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
