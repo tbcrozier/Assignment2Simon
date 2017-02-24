@@ -54,6 +54,7 @@ public class GameActivity extends AppCompatActivity {
         yellowButton = (Button) findViewById(R.id.yellow_button);
         blueButton = (Button) findViewById(R.id.blue_button);
         playerScore = 0;
+
         pattern = new int[100]; //100 should be a long enough pattern.
 
 
@@ -84,6 +85,14 @@ public class GameActivity extends AppCompatActivity {
      }
      else if(modeIn.equals("PLAYER_ADDS")){
          playerAdds();
+
+         //Add initial color to pattern pattern
+         Random random = new Random();
+         pattern[0] = random.nextInt(4 - 1 + 1) + 1;
+         /* bot turn */
+         paBotPlay();
+
+
      }
      else if(modeIn.equals("CHOOSE_YOUR_COLOR")){
          chooseYourColor();
@@ -93,14 +102,19 @@ public class GameActivity extends AppCompatActivity {
 
 
 
-
+////////////////////////////////////////////////////////////////////////
 
 
     void playerAdds(){
         Log.i("MODE: ", modeResult);
 
-        /* bot turn */
-        paBotPlay();
+
+        /*In this mode the bot only plays once
+         * The user repeats the pattern and adds one on their own.
+         * The longest pattern you can muster before messing your self up is your score.
+          * */
+
+
 
         /* Setup onclicks for each button */
         greenButton.setOnClickListener(new View.OnClickListener() {
@@ -136,18 +150,103 @@ public class GameActivity extends AppCompatActivity {
 
     /* Checks User input in "Player Add" Mode */
     private int paInputCheck(int buttonIdIn){
+        Log.i("METHOD:", "ssInputCheck()");
+
+        int colorCode  = getColorCode(buttonIdIn);
+
+            /*check if button input is the one */
+
+        if(colorCode != pattern[turnPosition]){
+            playerLoses();
+            return 0;
+        }
 
 
-        return 0;
+        turnPosition++;
+            /*Check if turn is over*/
+        if(turnPosition == patternCount) {
+            turnPosition = 0;
+
+            /* Set flag that makes next input add to pattern */
+
+            patternCount++;
+            nap(1200);
+
+            return 0;
+        }else {
+
+            playerScore++;
+
+
+            nap(1200);
+            return 0;
+        }
+
+
     }
 
 
     /* Bot Play input in "Player Add" Mode */
     private void paBotPlay(){
         Log.i("PA_BOTPLAY:","STARTED");
+        paBotTask botTurn =  new paBotTask();
+        botTurn.execute();
 
     }
 
+
+    class paBotTask extends AsyncTask<Void, Void, Void>{
+
+        @Override
+        protected Void doInBackground(Void... params) {
+
+            for( int x = 0; x < patternCount; x++){
+                Log.i("colorCode = ", "" + pattern[x]);
+
+                final int x2 = x;  //PROBLEM HERE
+                int y=1+1;
+
+                runOnUiThread(new Runnable() {
+                    @Override
+                    public void run() {
+
+                        int colorCode = pattern[x2];
+                        lightButton(getButtonId(colorCode));
+                    }
+                });
+
+                nap(700);
+
+                runOnUiThread(new Runnable() {
+                    @Override
+                    public void run() {
+                        int colorCode = pattern[x2];
+                        turnOffButton(getButtonId(colorCode));
+                    }
+                });
+
+            }
+
+            /* Add random button to sequence */
+
+            return null;
+        }
+    }//end  pa async task
+
+
+    //This probably is not needed.  I read the directions wrong.
+
+
+    /*
+    void paAddToPatern(){
+        Random random = new Random();
+        pattern[patternCount] = random.nextInt(4 - 1 + 1) + 1;
+
+    }
+
+    */
+
+    ////////////////////////////////////////////////////////////////////////
 
 
     void chooseYourColor(){
@@ -359,15 +458,7 @@ public class GameActivity extends AppCompatActivity {
 
 
 
-    class paBotTask extends AsyncTask<Void, Void, Void>{
 
-        @Override
-        protected Void doInBackground(Void... params) {
-
-            return null;
-        }
-
-    }//end  pa async task
 
 
     class ssBotTask extends AsyncTask<Void, Void, Void>{
