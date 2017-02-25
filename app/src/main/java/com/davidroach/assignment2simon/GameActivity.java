@@ -1,5 +1,6 @@
 package com.davidroach.assignment2simon;
 
+import android.content.DialogInterface;
 import android.graphics.Color;
 import android.media.AudioAttributes;
 import android.media.SoundPool;
@@ -10,7 +11,7 @@ import android.view.View;
 import android.widget.Button;
 import android.content.Intent;
 import android.util.Log;
-
+import android.app.Activity;
 import java.util.HashSet;
 import java.util.Random;
 import java.util.Set;
@@ -59,6 +60,7 @@ public class GameActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_game);
+        lockGameButtons();
 
         //get game mode selection
         Intent intentIn = getIntent();
@@ -81,6 +83,8 @@ public class GameActivity extends AppCompatActivity {
         findViewById(R.id.startGameButton).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                findViewById(R.id.startGameButton).setClickable(false);
+                findViewById(R.id.startGameButton).setAlpha(.2f);
                 play(modeResult);
             }
         });
@@ -287,6 +291,8 @@ public class GameActivity extends AppCompatActivity {
         @Override
         protected Void doInBackground(Void... params) {
 
+            lockGameButtons();
+
             for( int x = 0; x < patternCount; x++){
                 Log.i("colorCode = ", "" + pattern[x]);
 
@@ -314,8 +320,8 @@ public class GameActivity extends AppCompatActivity {
 
             }
 
-            /* Add random button to sequence */
 
+            unlockGameButtons();
             return null;
         }
     }//end  pa async task
@@ -562,14 +568,41 @@ public class GameActivity extends AppCompatActivity {
    void showYouLoseDialog(){
        Log.i("METHOD:", "showYouLoseDialog()");
        // 1. Instantiate an AlertDialog.Builder with its constructor
-       AlertDialog.Builder builder = new AlertDialog.Builder(getApplicationContext());
+       AlertDialog.Builder builder = new AlertDialog.Builder(GameActivity.this);
+
+       builder.setPositiveButton("Yes!", new DialogInterface.OnClickListener() {
+           @Override
+           public void onClick(DialogInterface dialog, int which) {
+
+               /*this.recreate() does not work here for some reason */
+
+               Intent intent = getIntent();
+               finish();
+               startActivity(intent);
+
+           }
+       });
+
+
+       builder.setNegativeButton("No!", new DialogInterface.OnClickListener() {
+           @Override
+           public void onClick(DialogInterface dialog, int which) {
+               Intent intent = new Intent(getApplicationContext(), Start.class);
+               startActivity(intent);
+           }
+       });
+
+
 
         // 2. Chain together various setter methods to set the dialog characteristics
        builder.setMessage(R.string.you_lose);
 
 
+
         // 3. Get the AlertDialog from create()
        AlertDialog dialog = builder.create();
+
+       dialog.show();
    }
 
 
@@ -581,6 +614,8 @@ public class GameActivity extends AppCompatActivity {
 
         @Override
         protected Void doInBackground(Void... params) {
+
+            lockGameButtons();
 
             for( int x = 0; x < patternCount; x++){
                 Log.i("X = ", "" + x);
@@ -607,6 +642,8 @@ public class GameActivity extends AppCompatActivity {
                     }
                 });
             }
+
+            unlockGameButtons();
             return null;
         }
 
@@ -616,6 +653,24 @@ public class GameActivity extends AppCompatActivity {
     /* If this stays Redundant fix it.  Right now no time.*/
     void playerLoses(){
         showYouLoseDialog();
+    }
+
+
+    void lockGameButtons(){
+        findViewById(R.id.red_button).setClickable(false);
+        findViewById(R.id.blue_button).setClickable(false);
+        findViewById(R.id.green_button).setClickable(false);
+        findViewById(R.id.yellow_button).setClickable(false);
+
+
+    }
+
+    void unlockGameButtons(){
+        findViewById(R.id.red_button).setClickable(true);
+        findViewById(R.id.blue_button).setClickable(true);
+        findViewById(R.id.green_button).setClickable(true);
+        findViewById(R.id.yellow_button).setClickable(true);
+
     }
 
 
