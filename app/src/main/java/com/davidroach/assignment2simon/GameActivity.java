@@ -77,6 +77,7 @@ public class GameActivity extends AppCompatActivity {
         redButton = (Button) findViewById(R.id.red_button);
         yellowButton = (Button) findViewById(R.id.yellow_button);
         blueButton = (Button) findViewById(R.id.blue_button);
+
         playerScore = 0;
 
         pattern = new int[100]; //100 should be a long enough pattern.
@@ -680,12 +681,15 @@ public class GameActivity extends AppCompatActivity {
                 final int x2 = x;  //PROBLEM HERE
                  int y=1+1;
 
+                final int colorCode = pattern[x2];
+                final int buttonID = getButtonId(colorCode);
+
                 runOnUiThread(new Runnable() {
                     @Override
                     public void run() {
 
-                        int colorCode = pattern[x2];
-                        lightButton(getButtonId(colorCode));
+
+                        lightButton(buttonID);
                     }
                 });
 
@@ -694,8 +698,8 @@ public class GameActivity extends AppCompatActivity {
                 runOnUiThread(new Runnable() {
                     @Override
                     public void run() {
-                        int colorCode = pattern[x2];
-                        turnOffButton(getButtonId(colorCode));
+
+                        turnOffButton(buttonID);
                     }
                 });
             }
@@ -709,6 +713,7 @@ public class GameActivity extends AppCompatActivity {
 
     /* If this stays Redundant fix it.  Right now no time.*/
     void playerLoses(){
+        lockGameButtons();
         showYouLoseDialog();
     }
 
