@@ -50,4 +50,13 @@
         android:layout_alignBaseline="@+id/green_button"
         android:layout_alignBottom="@+id/green_button"
         android:layout_alignParentEnd="true" />
+
+    <Button
+        android:text="Start Game"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/blue_button"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="159dp"
+        android:id="@+id/startGameButton" />
 </RelativeLayout>

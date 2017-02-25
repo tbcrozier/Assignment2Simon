@@ -1,6 +1,8 @@
 package com.davidroach.assignment2simon;
 
 import android.graphics.Color;
+import android.media.AudioAttributes;
+import android.media.SoundPool;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -8,7 +10,11 @@ import android.view.View;
 import android.widget.Button;
 import android.content.Intent;
 import android.util.Log;
+
+import java.util.HashSet;
 import java.util.Random;
+import java.util.Set;
+
 import 	android.app.AlertDialog;
 
 /**
@@ -16,6 +22,11 @@ import 	android.app.AlertDialog;
  */
 
 public class GameActivity extends AppCompatActivity {
+
+    private SoundPool soundPool;
+    private Set<Integer> soundsLoaded;
+
+
 
     Button greenButton;
     Button redButton;
@@ -32,6 +43,13 @@ public class GameActivity extends AppCompatActivity {
     int turnPosition = 0;
     int playerScore = 0;
 
+    int button1SoundID;
+    int button2SoundID;
+    int button3SoundID;
+    int button4SoundID;
+    int failButtonSoundID;
+    int razzButtonSoundID;
+
 
 
 
@@ -45,6 +63,9 @@ public class GameActivity extends AppCompatActivity {
         //get game mode selection
         Intent intentIn = getIntent();
 
+        //load game sounds
+        soundsLoaded = new HashSet<Integer>();
+
          modeResult = intentIn.getStringExtra("GAMEMODE");
 
         Log.i("MODE_IN","->>" + modeResult); //debug code
@@ -57,18 +78,64 @@ public class GameActivity extends AppCompatActivity {
 
         pattern = new int[100]; //100 should be a long enough pattern.
 
+        findViewById(R.id.startGameButton).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                play(modeResult);
+            }
+        });
 
-        play(modeResult);
+        //play(modeResult);
 
 
     }
 
 
+    @Override
+    protected void onResume() {
+        super.onResume();
+
+        AudioAttributes.Builder attrBuilder = new AudioAttributes.Builder();
+        attrBuilder.setUsage(AudioAttributes.USAGE_GAME);
+
+        SoundPool.Builder spBuilder = new SoundPool.Builder();
+        spBuilder.setAudioAttributes(attrBuilder.build());
+        spBuilder.setMaxStreams(2);
+
+        soundPool = spBuilder.build();
+
+        soundPool.setOnLoadCompleteListener(new SoundPool.OnLoadCompleteListener() {
+            @Override
+            public void onLoadComplete(SoundPool soundPool, int sampleId, int status) {
+
+                if(status==0){//success
+                    soundsLoaded.add(sampleId);
+                    Log.i("SOUND","Sound loaded: " + sampleId);
+
+                }else{
+                    Log.i("SOUND","Error: Cannot load sound status = " +status);
+                }
 
 
+            }
 
 
-    private void playSound(int buttonId){
+        });
+
+        button1SoundID = soundPool.load(this, R.raw.button1sound,1);
+        button2SoundID = soundPool.load(this, R.raw.button2sound,1);
+        button3SoundID = soundPool.load(this, R.raw.button3sound,1);
+        button4SoundID = soundPool.load(this, R.raw.button4sound,1);
+        failButtonSoundID = soundPool.load(this, R.raw.failsound,1);
+        razzButtonSoundID = soundPool.load(this, R.raw.razzsound,1);
+
+
+    }
+
+    private void playSound(int soundId){
+        if(soundsLoaded.contains(soundId)){
+            soundPool.play(soundId,1.0f,1.0f,0,0,1.0f);
+        }
 
     }
 
@@ -162,18 +229,18 @@ public class GameActivity extends AppCompatActivity {
         //check player add flag
 
         if(paAddFlag == true){
-
+            playSound(chooseButtonSound(buttonIdIn));
             pattern[patternCount-1] = colorCode;
-
             paAddFlag = false;
             return 0;
         }
        else if(colorCode != pattern[turnPosition]){
+            playSound(failButtonSoundID);
             playerLoses();
             return 0;
         }
 
-
+        playSound(chooseButtonSound(buttonIdIn));
         turnPosition++;
             /*Check if turn is over*/
         if(turnPosition == patternCount) {
@@ -207,6 +274,8 @@ public class GameActivity extends AppCompatActivity {
     /* Bot Play input in "Player Add" Mode */
     private void paBotPlay(){
         Log.i("PA_BOTPLAY:","STARTED");
+
+
         paBotTask botTurn =  new paBotTask();
         botTurn.execute();
 
@@ -284,6 +353,7 @@ public class GameActivity extends AppCompatActivity {
         greenButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
                 ssInputCheck(R.id.green_button);
             }
         });
@@ -313,6 +383,8 @@ public class GameActivity extends AppCompatActivity {
 
     int ssInputCheck(int buttonIdIn){
 
+
+
         Log.i("METHOD:", "ssInputCheck()");
 
         int colorCode  = getColorCode(buttonIdIn);
@@ -320,9 +392,12 @@ public class GameActivity extends AppCompatActivity {
             /*check if button input is the one */
 
         if(colorCode != pattern[turnPosition]){
+            playSound(failButtonSoundID);
             playerLoses();
             return 0;
         }
+
+        playSound(chooseButtonSound(buttonIdIn));
 
 
         turnPosition++;
@@ -342,6 +417,25 @@ public class GameActivity extends AppCompatActivity {
             return 0;
         }
 
+    }
+
+    /* return sound id to be play depending on button pressed */
+    int chooseButtonSound(int buttonIdIn){
+        if(buttonIdIn == R.id.green_button){
+           return button1SoundID;
+        }
+        if(buttonIdIn == R.id.red_button){
+            return button2SoundID;
+
+        }
+        if(buttonIdIn == R.id.yellow_button){
+            return button3SoundID;
+
+        }
+        if(buttonIdIn == R.id.blue_button){
+            return button4SoundID;
+        }
+        return 0;
     }
 
 
@@ -428,17 +522,21 @@ public class GameActivity extends AppCompatActivity {
 
         if(buttonIdIn == R.id.red_button){
             redButton.setBackgroundColor(android.graphics.Color.WHITE);
+            playSound(button2SoundID);
             //redButton.setBackgroundResource(android.R.drawable.btn_default);
         }
         if(buttonIdIn == R.id.blue_button){
             blueButton.setBackgroundColor(android.graphics.Color.WHITE);
+            playSound(button4SoundID);
         }
         if(buttonIdIn == R.id.green_button){
             greenButton.setBackgroundColor(android.graphics.Color.WHITE);
+            playSound(button1SoundID);
 
         }
         if(buttonIdIn == R.id.yellow_button){
             yellowButton.setBackgroundColor(android.graphics.Color.WHITE);
+            playSound(button3SoundID);
         }
 
     }
