@@ -7,6 +7,7 @@ import android.media.SoundPool;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.view.MotionEvent;
 import android.view.View;
 import android.widget.Button;
 import android.content.Intent;
@@ -89,7 +90,63 @@ public class GameActivity extends AppCompatActivity {
             }
         });
 
-        //play(modeResult);
+        //set on touch listeners for color change
+        redButton.setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View v, MotionEvent event) {
+                if(event.getAction() == MotionEvent.ACTION_DOWN) {
+                    redButton.setBackgroundColor(android.graphics.Color.WHITE);
+                } else if (event.getAction() == MotionEvent.ACTION_UP) {
+                    redButton.setBackgroundColor(android.graphics.Color.RED);
+
+                }
+                return false;
+            }
+        });
+
+        yellowButton.setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View v, MotionEvent event) {
+                if(event.getAction() == MotionEvent.ACTION_DOWN) {
+                    yellowButton.setBackgroundColor(android.graphics.Color.WHITE);
+                } else if (event.getAction() == MotionEvent.ACTION_UP) {
+                    yellowButton.setBackgroundColor(android.graphics.Color.YELLOW);
+
+                }                return false;
+            }
+        });
+
+        blueButton.setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View v, MotionEvent event) {
+                if(event.getAction() == MotionEvent.ACTION_DOWN) {
+                    blueButton.setBackgroundColor(android.graphics.Color.WHITE);
+                } else if (event.getAction() == MotionEvent.ACTION_UP) {
+                    blueButton.setBackgroundColor(android.graphics.Color.BLUE);
+
+                }                return false;
+            }
+        });
+
+        greenButton.setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View v, MotionEvent event) {
+                if(event.getAction() == MotionEvent.ACTION_DOWN) {
+                    greenButton.setBackgroundColor(android.graphics.Color.WHITE);
+                } else if (event.getAction() == MotionEvent.ACTION_UP) {
+                    greenButton.setBackgroundColor(android.graphics.Color.GREEN);
+
+                }
+                return false;
+            }
+        });
+
+
+
+        //set on release listeners
+
+
+
 
 
     }
