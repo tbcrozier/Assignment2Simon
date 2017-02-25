@@ -19,17 +19,21 @@
         android:layout_alignParentStart="true"
         android:layout_marginStart="40dp"
         android:layout_marginTop="103dp"
-        android:id="@+id/green_button" />
+        android:id="@+id/green_button"
+        android:minHeight="80dp"
+        android:minWidth="80dp" />
 
     <Button
         android:text="@string/yellow_color"
         android:background="@color/colorYellow"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="88dp"
+        android:layout_marginTop="40dp"
         android:id="@+id/yellow_button"
         android:layout_below="@+id/green_button"
-        android:layout_alignStart="@+id/green_button" />
+        android:layout_alignStart="@+id/green_button"
+        android:minHeight="80dp"
+        android:minWidth="80dp" />
 
     <Button
         android:text="@string/blue_color"
@@ -38,7 +42,9 @@
         android:layout_height="wrap_content"
         android:layout_alignEnd="@+id/red_button"
         android:id="@+id/blue_button"
-        android:layout_alignTop="@+id/yellow_button" />
+        android:layout_alignTop="@+id/yellow_button"
+        android:minHeight="80dp"
+        android:minWidth="80dp" />
 
     <Button
         android:text="@string/red_color"
@@ -49,5 +55,15 @@
         android:id="@+id/red_button"
         android:layout_alignBaseline="@+id/green_button"
         android:layout_alignBottom="@+id/green_button"
-        android:layout_alignParentEnd="true" />
+        android:layout_alignParentEnd="true"
+        android:minHeight="80dp"
+        android:minWidth="80dp" />
+
+    <Button
+        android:text="Start Game"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:id="@+id/startGameButton"
+        android:layout_alignParentTop="true" />
 </RelativeLayout>
