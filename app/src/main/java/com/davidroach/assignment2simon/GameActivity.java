@@ -24,7 +24,7 @@ public class GameActivity extends AppCompatActivity {
 
     String modeResult;
 
-    boolean userMadeError = false;
+    boolean paAddFlag = false;
 
     int[] pattern;
 
@@ -156,7 +156,19 @@ public class GameActivity extends AppCompatActivity {
 
             /*check if button input is the one */
 
-        if(colorCode != pattern[turnPosition]){
+
+
+
+        //check player add flag
+
+        if(paAddFlag == true){
+
+            pattern[patternCount-1] = colorCode;
+
+            paAddFlag = false;
+            return 0;
+        }
+       else if(colorCode != pattern[turnPosition]){
             playerLoses();
             return 0;
         }
@@ -167,7 +179,12 @@ public class GameActivity extends AppCompatActivity {
         if(turnPosition == patternCount) {
             turnPosition = 0;
 
+
+
             /* Set flag that makes next input add to pattern */
+            paAddFlag = true;
+
+
 
             patternCount++;
             nap(1200);
@@ -175,6 +192,7 @@ public class GameActivity extends AppCompatActivity {
             return 0;
         }else {
 
+            //check change
             playerScore++;
 
 
