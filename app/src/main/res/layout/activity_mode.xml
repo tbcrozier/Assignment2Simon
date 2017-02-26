@@ -34,4 +34,64 @@
         android:id="@+id/choosecolor_button"
         tools:text="@string/choose_color"
         android:text="@string/choose_color" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/high_score_tv"
+        android:textAlignment="center"
+        android:layout_marginTop="35sp"
+        android:textSize="19sp"
+        android:layout_marginBottom="10sp"
+        android:text="@string/high_Score_label" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/sshlabel_tv"
+        android:layout_marginBottom="0dp"
+        android:textSize="13sp"
+        android:textAlignment="center"
+        android:text="@string/ssh_label" />
+
+    <TextView
+        android:text="0"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/ssh_score_tv"
+        android:textAlignment="center"
+        android:layout_marginBottom="15dp" />
+
+    <TextView
+        android:text="@string/pah_label"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/pahlabel_tv"
+        android:layout_marginBottom="0dp"
+        android:textSize="13sp"
+        android:textAlignment="center" />
+
+    <TextView
+        android:text="0"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/pah_score_tv"
+        android:textAlignment="center"
+        android:layout_marginBottom="15dp" />
+
+    <TextView
+        android:text="@string/cyc_label"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/cyclabel_tv"
+        android:textSize="13sp"
+        android:textAlignment="center" />
+
+    <TextView
+        android:text="0"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/cych_score_tv"
+        android:textAlignment="center"
+        android:layout_marginBottom="15dp" />
 </LinearLayout>
