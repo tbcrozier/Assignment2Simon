@@ -18,6 +18,9 @@ import java.util.Random;
 import java.util.Set;
 
 import 	android.app.AlertDialog;
+import android.widget.TextView;
+
+import org.w3c.dom.Text;
 
 /**
  * Created by droach-dev on 2/15/17.
@@ -35,6 +38,8 @@ public class GameActivity extends AppCompatActivity {
     Button yellowButton;
     Button blueButton;
 
+    TextView scoreTextView;
+
     String modeResult;
 
     boolean paAddFlag = false;
@@ -44,6 +49,9 @@ public class GameActivity extends AppCompatActivity {
     int patternCount = 1;
     int turnPosition = 0;
     int playerScore = 0;
+    int ssHighScore;
+    int paHighScore;
+    int ccHighScore;
 
     int button1SoundID;
     int button2SoundID;
@@ -79,6 +87,8 @@ public class GameActivity extends AppCompatActivity {
         blueButton = (Button) findViewById(R.id.blue_button);
 
         playerScore = 0;
+
+        scoreTextView = (TextView) findViewById(R.id.score_tv);
 
         pattern = new int[100]; //100 should be a long enough pattern.
 
@@ -316,16 +326,17 @@ public class GameActivity extends AppCompatActivity {
 
 
             patternCount++;
-            nap(1200);
+            //nap(1200);
 
             return 0;
         }else {
 
             //check change
-            playerScore++;
+            playerScore = patternCount;
+            scoreTextView.setText("Score: " + playerScore);
 
 
-            nap(1200);
+            //nap(600);
             return 0;
         }
 
@@ -469,15 +480,20 @@ public class GameActivity extends AppCompatActivity {
         if(turnPosition == patternCount) {
             turnPosition = 0;
             patternCount++;
+            playerScore = patternCount-1;
+            scoreTextView.setText("Score: " + playerScore);
             nap(1200);
             simonSays();
             return 0;
         }else {
 
-            playerScore++;
 
 
-            nap(1200);
+
+
+
+
+            //nap(1200);
             return 0;
         }
 
