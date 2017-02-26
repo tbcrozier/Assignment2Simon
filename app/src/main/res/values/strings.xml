@@ -1,22 +1,27 @@
 <resources>
-    <string name="app_name">Assignment2Simon</string>
-    <string name="about_title">Simon App</string>
-    <string name="about_game">Simon is a game of memory and wits!</string>
-    <string name="about_mode">Simon has 3 unique and challenging modes.</string>
-    <string name="mode_question">Choose game mode:</string>
-    <string name="simon_says">Simon Says</string>
-    <string name="player_adds">Player Adds</string>
-    <string name="choose_color">Choose Your Color</string>
-    <string name="blue_color">Blue</string>
-    <string name="red_color">Red</string>
-    <string name="green_color">Green</string>
-    <string name="yellow_color">Yellow</string>
-    <string name="about_game_name_1_tv">Simon Says</string>
-    <string name="about_game_name_2_tv">Player Adds</string>
-    <string name="about_game_name_3_tv">Choose Colors</string>
-    <string name="start_game_title">Start Game</string>
-    <string name="play_simon_button">Play Simon</string>
-    <string name="about_simon_button">About Simon</string>
-    <string name="exit_button">Exit</string>
-    <string name="you_lose">You Lose! Try Again?</string>
+
+<string name="app_name">Assignment2Simon</string>
+<string name="about_title">Simon App</string>
+<string name="about_game">Simon is a game of memory and wits!</string>
+<string name="about_mode">Simon has 3 unique and challenging modes.</string>
+<string name="mode_question">Choose game mode:</string>
+<string name="simon_says">Simon Says</string>
+<string name="player_adds">Player Adds</string>
+<string name="choose_color">Choose Your Color</string>
+<string name="blue_color">Blue</string>
+<string name="red_color">Red</string>
+<string name="green_color">Green</string>
+<string name="yellow_color">Yellow</string>
+<string name="about_game_name_1_tv">Simon Says</string>
+<string name="about_game_name_2_tv">Player Adds</string>
+<string name="about_game_name_3_tv">Choose Colors</string>
+<string name="play_simon_button">Play Simon</string>
+<string name="about_simon_button">About Simon</string>
+<string name="exit_button">Exit</string>
+<string name="you_lose">You Lose! Try Again?</string>
+<string name="high_Score_label"><u>High Scores</u></string>
+<string name="ssh_label"><u>Simon Says</u></string>
+<string name="pah_label"><u>Player Adds</u></string>
+<string name="cyc_label"><u>Choose Your Color</u></string>
+
 </resources>

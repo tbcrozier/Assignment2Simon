@@ -5,13 +5,20 @@ import android.os.Bundle;
 import android.view.View;
 import android.content.Intent;
 import android.view.Window;
+
 import android.widget.Button;
+import android.widget.TextView;
 
 /**
  * Created by droach-dev on 2/16/17.
  */
 
 public class ModeActivity extends AppCompatActivity {
+
+
+    TextView sshigh_tv;
+    TextView pahigh_tv;
+    TextView cychigh_tv;
 
 
     private enum Mode {
@@ -35,6 +42,12 @@ public class ModeActivity extends AppCompatActivity {
         /* Disable title bar */
         this.requestWindowFeature(Window.FEATURE_NO_TITLE);
         setContentView(R.layout.activity_mode);
+
+
+        /* High scores will be loade dinto these textviews */
+        TextView sshigh_tv = (TextView) findViewById(R.id.ssh_score_tv);
+        TextView pahigh_tv = (TextView) findViewById(R.id.pah_score_tv);
+        TextView cychigh_tv = (TextView) findViewById(R.id.cych_score_tv);
 
 
 

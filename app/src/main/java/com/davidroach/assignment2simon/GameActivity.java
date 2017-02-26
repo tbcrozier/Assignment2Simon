@@ -7,6 +7,7 @@ import android.media.SoundPool;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.view.MotionEvent;
 import android.view.View;
 import android.widget.Button;
 import android.content.Intent;
@@ -17,6 +18,9 @@ import java.util.Random;
 import java.util.Set;
 
 import 	android.app.AlertDialog;
+import android.widget.TextView;
+
+import org.w3c.dom.Text;
 
 /**
  * Created by droach-dev on 2/15/17.
@@ -34,6 +38,8 @@ public class GameActivity extends AppCompatActivity {
     Button yellowButton;
     Button blueButton;
 
+    TextView scoreTextView;
+
     String modeResult;
 
     boolean paAddFlag = false;
@@ -43,6 +49,9 @@ public class GameActivity extends AppCompatActivity {
     int patternCount = 1;
     int turnPosition = 0;
     int playerScore = 0;
+    int ssHighScore;
+    int paHighScore;
+    int ccHighScore;
 
     int button1SoundID;
     int button2SoundID;
@@ -76,7 +85,10 @@ public class GameActivity extends AppCompatActivity {
         redButton = (Button) findViewById(R.id.red_button);
         yellowButton = (Button) findViewById(R.id.yellow_button);
         blueButton = (Button) findViewById(R.id.blue_button);
+
         playerScore = 0;
+
+        scoreTextView = (TextView) findViewById(R.id.score_tv);
 
         pattern = new int[100]; //100 should be a long enough pattern.
 
@@ -89,7 +101,63 @@ public class GameActivity extends AppCompatActivity {
             }
         });
 
-        //play(modeResult);
+        //set on touch listeners for color change
+        redButton.setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View v, MotionEvent event) {
+                if(event.getAction() == MotionEvent.ACTION_DOWN) {
+                    redButton.setBackgroundColor(android.graphics.Color.WHITE);
+                } else if (event.getAction() == MotionEvent.ACTION_UP) {
+                    redButton.setBackgroundColor(android.graphics.Color.RED);
+
+                }
+                return false;
+            }
+        });
+
+        yellowButton.setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View v, MotionEvent event) {
+                if(event.getAction() == MotionEvent.ACTION_DOWN) {
+                    yellowButton.setBackgroundColor(android.graphics.Color.WHITE);
+                } else if (event.getAction() == MotionEvent.ACTION_UP) {
+                    yellowButton.setBackgroundColor(android.graphics.Color.YELLOW);
+
+                }                return false;
+            }
+        });
+
+        blueButton.setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View v, MotionEvent event) {
+                if(event.getAction() == MotionEvent.ACTION_DOWN) {
+                    blueButton.setBackgroundColor(android.graphics.Color.WHITE);
+                } else if (event.getAction() == MotionEvent.ACTION_UP) {
+                    blueButton.setBackgroundColor(android.graphics.Color.BLUE);
+
+                }                return false;
+            }
+        });
+
+        greenButton.setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View v, MotionEvent event) {
+                if(event.getAction() == MotionEvent.ACTION_DOWN) {
+                    greenButton.setBackgroundColor(android.graphics.Color.WHITE);
+                } else if (event.getAction() == MotionEvent.ACTION_UP) {
+                    greenButton.setBackgroundColor(android.graphics.Color.GREEN);
+
+                }
+                return false;
+            }
+        });
+
+
+
+        //set on release listeners
+
+
+
 
 
     }
@@ -258,16 +326,17 @@ public class GameActivity extends AppCompatActivity {
 
 
             patternCount++;
-            nap(1200);
+            //nap(1200);
 
             return 0;
         }else {
 
             //check change
-            playerScore++;
+            playerScore = patternCount;
+            scoreTextView.setText("Score: " + playerScore);
 
 
-            nap(1200);
+            //nap(600);
             return 0;
         }
 
@@ -411,15 +480,20 @@ public class GameActivity extends AppCompatActivity {
         if(turnPosition == patternCount) {
             turnPosition = 0;
             patternCount++;
+            playerScore = patternCount-1;
+            scoreTextView.setText("Score: " + playerScore);
             nap(1200);
             simonSays();
             return 0;
         }else {
 
-            playerScore++;
 
 
-            nap(1200);
+
+
+
+
+            //nap(1200);
             return 0;
         }
 
@@ -623,12 +697,15 @@ public class GameActivity extends AppCompatActivity {
                 final int x2 = x;  //PROBLEM HERE
                  int y=1+1;
 
+                final int colorCode = pattern[x2];
+                final int buttonID = getButtonId(colorCode);
+
                 runOnUiThread(new Runnable() {
                     @Override
                     public void run() {
 
-                        int colorCode = pattern[x2];
-                        lightButton(getButtonId(colorCode));
+
+                        lightButton(buttonID);
                     }
                 });
 
@@ -637,8 +714,8 @@ public class GameActivity extends AppCompatActivity {
                 runOnUiThread(new Runnable() {
                     @Override
                     public void run() {
-                        int colorCode = pattern[x2];
-                        turnOffButton(getButtonId(colorCode));
+
+                        turnOffButton(buttonID);
                     }
                 });
             }
@@ -652,6 +729,7 @@ public class GameActivity extends AppCompatActivity {
 
     /* If this stays Redundant fix it.  Right now no time.*/
     void playerLoses(){
+        lockGameButtons();
         showYouLoseDialog();
     }
 
