@@ -266,6 +266,7 @@ public class GameActivity extends AppCompatActivity {
         }
        else if(colorCode != pattern[turnPosition]){
             playSound(failButtonSoundID);
+            playerScore = patternCount;
             playerLoses();
             return 0;
         }
@@ -428,6 +429,7 @@ public class GameActivity extends AppCompatActivity {
 
         if(colorCode != pattern[turnPosition]){
             playSound(failButtonSoundID);
+            playerScore = patternCount-1;
             playerLoses();
             return 0;
         }
@@ -704,14 +706,9 @@ public class GameActivity extends AppCompatActivity {
         findViewById(R.id.blue_button).setClickable(false);
         findViewById(R.id.green_button).setClickable(false);
         findViewById(R.id.yellow_button).setClickable(false);
-
-
     }
 
     void unlockGameButtons(){
-
-
-
         greenButton = (Button) findViewById(R.id.green_button);
         redButton = (Button) findViewById(R.id.red_button);
         yellowButton = (Button) findViewById(R.id.yellow_button);
