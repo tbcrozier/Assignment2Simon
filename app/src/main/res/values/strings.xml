@@ -4,7 +4,7 @@
 <string name="about_title">Simon App</string>
 <string name="about_game">Simon is a game of memory and wits!</string>
 <string name="about_mode">Simon has 3 unique and challenging modes.</string>
-<string name="mode_question">Choose Game Mode:</string>
+<string name="mode_question">Choose Game Mode</string>
 <string name="simon_says">Simon Says</string>
 <string name="player_adds">Player Adds</string>
 <string name="choose_color">Choose Your Color</string>
