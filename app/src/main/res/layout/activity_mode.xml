@@ -4,7 +4,6 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/colorBlack"
     android:id="@+id/activity_mode">
 
     <TextView
@@ -12,8 +11,7 @@
         android:layout_height="wrap_content"
         android:id="@+id/textView"
         android:textAlignment="center"
-        android:text="@string/mode_question"
-        android:textColor="@android:color/white"
+        tools:text="@string/mode_question"
         android:textSize="30sp" />
 
     <Button

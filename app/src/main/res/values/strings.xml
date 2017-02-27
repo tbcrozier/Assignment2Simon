@@ -23,5 +23,6 @@
 <string name="ssh_label"><u>Simon Says</u></string>
 <string name="pah_label"><u>Player Adds</u></string>
 <string name="cyc_label"><u>Choose Your Color</u></string>
+    <string name="start_game_title">Simon</string>
 
 </resources>

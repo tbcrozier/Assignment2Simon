@@ -16,6 +16,7 @@ import android.app.Activity;
 import java.util.HashSet;
 import java.util.Random;
 import java.util.Set;
+import android.content.SharedPreferences;
 
 import 	android.app.AlertDialog;
 import android.widget.TextView;
@@ -69,7 +70,7 @@ public class GameActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_game);
-        lockGameButtons();
+
 
         //get game mode selection
         Intent intentIn = getIntent();
@@ -86,6 +87,11 @@ public class GameActivity extends AppCompatActivity {
         yellowButton = (Button) findViewById(R.id.yellow_button);
         blueButton = (Button) findViewById(R.id.blue_button);
 
+
+
+
+        lockGameButtons();
+
         playerScore = 0;
 
         scoreTextView = (TextView) findViewById(R.id.score_tv);
@@ -101,56 +107,7 @@ public class GameActivity extends AppCompatActivity {
             }
         });
 
-        //set on touch listeners for color change
-        redButton.setOnTouchListener(new View.OnTouchListener() {
-            @Override
-            public boolean onTouch(View v, MotionEvent event) {
-                if(event.getAction() == MotionEvent.ACTION_DOWN) {
-                    redButton.setBackgroundColor(android.graphics.Color.WHITE);
-                } else if (event.getAction() == MotionEvent.ACTION_UP) {
-                    redButton.setBackgroundColor(android.graphics.Color.RED);
 
-                }
-                return false;
-            }
-        });
-
-        yellowButton.setOnTouchListener(new View.OnTouchListener() {
-            @Override
-            public boolean onTouch(View v, MotionEvent event) {
-                if(event.getAction() == MotionEvent.ACTION_DOWN) {
-                    yellowButton.setBackgroundColor(android.graphics.Color.WHITE);
-                } else if (event.getAction() == MotionEvent.ACTION_UP) {
-                    yellowButton.setBackgroundColor(android.graphics.Color.YELLOW);
-
-                }                return false;
-            }
-        });
-
-        blueButton.setOnTouchListener(new View.OnTouchListener() {
-            @Override
-            public boolean onTouch(View v, MotionEvent event) {
-                if(event.getAction() == MotionEvent.ACTION_DOWN) {
-                    blueButton.setBackgroundColor(android.graphics.Color.WHITE);
-                } else if (event.getAction() == MotionEvent.ACTION_UP) {
-                    blueButton.setBackgroundColor(android.graphics.Color.BLUE);
-
-                }                return false;
-            }
-        });
-
-        greenButton.setOnTouchListener(new View.OnTouchListener() {
-            @Override
-            public boolean onTouch(View v, MotionEvent event) {
-                if(event.getAction() == MotionEvent.ACTION_DOWN) {
-                    greenButton.setBackgroundColor(android.graphics.Color.WHITE);
-                } else if (event.getAction() == MotionEvent.ACTION_UP) {
-                    greenButton.setBackgroundColor(android.graphics.Color.GREEN);
-
-                }
-                return false;
-            }
-        });
 
 
 
@@ -247,6 +204,8 @@ public class GameActivity extends AppCompatActivity {
     void playerAdds(){
         Log.i("MODE: ", modeResult);
 
+        onTouchSetup();
+
 
         /*In this mode the bot only plays once
          * The user repeats the pattern and adds one on their own.
@@ -308,6 +267,7 @@ public class GameActivity extends AppCompatActivity {
         }
        else if(colorCode != pattern[turnPosition]){
             playSound(failButtonSoundID);
+            playerScore = patternCount;
             playerLoses();
             return 0;
         }
@@ -421,6 +381,8 @@ public class GameActivity extends AppCompatActivity {
 
     void simonSays(){
 
+        onTouchSetup();
+
         /* Computer play pattern */
         ssBotPlay();
 
@@ -468,6 +430,7 @@ public class GameActivity extends AppCompatActivity {
 
         if(colorCode != pattern[turnPosition]){
             playSound(failButtonSoundID);
+            playerScore = patternCount-1;
             playerLoses();
             return 0;
         }
@@ -730,26 +693,133 @@ public class GameActivity extends AppCompatActivity {
     /* If this stays Redundant fix it.  Right now no time.*/
     void playerLoses(){
         lockGameButtons();
+        saveHighScore(playerScore, modeResult);
         showYouLoseDialog();
     }
 
 
     void lockGameButtons(){
+        findViewById(R.id.red_button).setOnTouchListener(null);
+        findViewById(R.id.blue_button).setOnTouchListener(null);
+        findViewById(R.id.green_button).setOnTouchListener(null);
+        findViewById(R.id.yellow_button).setOnTouchListener(null);
         findViewById(R.id.red_button).setClickable(false);
         findViewById(R.id.blue_button).setClickable(false);
         findViewById(R.id.green_button).setClickable(false);
         findViewById(R.id.yellow_button).setClickable(false);
-
-
     }
 
     void unlockGameButtons(){
+        greenButton = (Button) findViewById(R.id.green_button);
+        redButton = (Button) findViewById(R.id.red_button);
+        yellowButton = (Button) findViewById(R.id.yellow_button);
+        blueButton = (Button) findViewById(R.id.blue_button);
+
+
         findViewById(R.id.red_button).setClickable(true);
         findViewById(R.id.blue_button).setClickable(true);
         findViewById(R.id.green_button).setClickable(true);
         findViewById(R.id.yellow_button).setClickable(true);
 
+        //set on touch listeners for color change
+        redButton.setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View v, MotionEvent event) {
+                if(event.getAction() == MotionEvent.ACTION_DOWN) {
+                    redButton.setBackgroundColor(android.graphics.Color.WHITE);
+                } else if (event.getAction() == MotionEvent.ACTION_UP) {
+                    redButton.setBackgroundColor(android.graphics.Color.RED);
+
+                }
+                return false;
+            }
+        });
+
+        yellowButton.setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View v, MotionEvent event) {
+                if(event.getAction() == MotionEvent.ACTION_DOWN) {
+                    yellowButton.setBackgroundColor(android.graphics.Color.WHITE);
+                } else if (event.getAction() == MotionEvent.ACTION_UP) {
+                    yellowButton.setBackgroundColor(android.graphics.Color.YELLOW);
+
+                }                return false;
+            }
+        });
+
+        blueButton.setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View v, MotionEvent event) {
+                if(event.getAction() == MotionEvent.ACTION_DOWN) {
+                    blueButton.setBackgroundColor(android.graphics.Color.WHITE);
+                } else if (event.getAction() == MotionEvent.ACTION_UP) {
+                    blueButton.setBackgroundColor(android.graphics.Color.BLUE);
+
+                }                return false;
+            }
+        });
+
+        greenButton.setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View v, MotionEvent event) {
+                if(event.getAction() == MotionEvent.ACTION_DOWN) {
+                    greenButton.setBackgroundColor(android.graphics.Color.WHITE);
+                } else if (event.getAction() == MotionEvent.ACTION_UP) {
+                    greenButton.setBackgroundColor(android.graphics.Color.GREEN);
+
+                }
+                return false;
+            }
+        });
     }
+
+
+    void saveHighScore(int scoreIn, String modeIn){
+        //get high scores
+        SharedPreferences prefs = getSharedPreferences("HIGH_SCORES", MODE_PRIVATE);
+        int ss_high= prefs.getInt("SS_HIGH", 0);
+        int pa_high= prefs.getInt("PA_HIGH", 0);
+        int cyc_high= prefs.getInt("CYC_HIGH", 0);
+
+        String prefKey = "";
+
+        int currentHighScore = 0;
+
+        SharedPreferences.Editor editor = getSharedPreferences("HIGH_SCORES", MODE_PRIVATE).edit();
+
+        //determine game mode
+        if(modeIn.equals("SIMON_SAYS")){
+         /* Fill pattern array with 100 random values that range between 1 and 4 */
+            prefKey = "SS_HIGH";
+            currentHighScore = ss_high;
+        }
+        else if(modeIn.equals("PLAYER_ADDS")){
+            prefKey = "PA_HIGH";
+            currentHighScore = pa_high;
+
+
+        }
+        else if(modeIn.equals("CHOOSE_YOUR_COLOR")){
+            prefKey = "CYC_HIGH";
+            currentHighScore = cyc_high;
+        }
+
+
+        //if current score is higher than saved high score save to persistent data
+
+        if(scoreIn > currentHighScore){
+            currentHighScore = scoreIn;
+            editor.putInt(prefKey, currentHighScore);
+            editor.commit();
+        }
+
+
+    }
+
+    void onTouchSetup() {
+    }
+
+
 
 
 }

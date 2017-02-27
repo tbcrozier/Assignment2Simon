@@ -1,5 +1,6 @@
 package com.davidroach.assignment2simon;
 
+import android.content.SharedPreferences;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -48,6 +49,17 @@ public class ModeActivity extends AppCompatActivity {
         TextView sshigh_tv = (TextView) findViewById(R.id.ssh_score_tv);
         TextView pahigh_tv = (TextView) findViewById(R.id.pah_score_tv);
         TextView cychigh_tv = (TextView) findViewById(R.id.cych_score_tv);
+
+        //get high scores here
+        SharedPreferences prefs = getSharedPreferences("HIGH_SCORES", MODE_PRIVATE);
+        int ss_high= prefs.getInt("SS_HIGH", 0);
+        int pa_high= prefs.getInt("PA_HIGH", 0);
+        int cyc_high= prefs.getInt("CYC_HIGH", 0);
+
+        //set high score text views
+        sshigh_tv.setText(Integer.toString(ss_high) + " button pattern.");
+        pahigh_tv.setText(Integer.toString(pa_high) + " button pattern.");
+        cychigh_tv.setText(Integer.toString(cyc_high) + " button pattern.");
 
 
 
