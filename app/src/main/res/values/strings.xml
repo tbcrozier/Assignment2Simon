@@ -19,8 +19,9 @@
 <string name="about_simon_button">About Simon</string>
 <string name="exit_button">Exit</string>
 <string name="you_lose">You Lose! Try Again?</string>
-    <string name="high_Score_label"><u>High Scores</u></string>
-    <string name="ssh_label"><u>Simon Says</u></string>
-    <string name="pah_label"><u>Player Adds</u></string>
-    <string name="cyc_label"><u>Choose Your Color</u></string>
+<string name="high_Score_label"><u>High Scores</u></string>
+<string name="ssh_label"><u>Simon Says</u></string>
+<string name="pah_label"><u>Player Adds</u></string>
+<string name="cyc_label"><u>Choose Your Color</u></string>
+
 </resources>
