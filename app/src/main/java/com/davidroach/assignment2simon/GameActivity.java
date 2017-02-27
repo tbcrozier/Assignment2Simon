@@ -16,6 +16,7 @@ import android.app.Activity;
 import java.util.HashSet;
 import java.util.Random;
 import java.util.Set;
+import android.content.SharedPreferences;
 
 import 	android.app.AlertDialog;
 import android.widget.TextView;
@@ -774,13 +775,44 @@ public class GameActivity extends AppCompatActivity {
 
 
     void saveHighScore(int scoreIn, String modeIn){
-        //determine game mode
-        playerScore++;
+        //get high scores
+        SharedPreferences prefs = getSharedPreferences("HIGH_SCORES", MODE_PRIVATE);
+        int ss_high= prefs.getInt("SS_HIGH", 0);
+        int pa_high= prefs.getInt("PA_HIGH", 0);
+        int cyc_high= prefs.getInt("CYC_HIGH", 0);
 
-        //get current saved high score
+        String prefKey = "";
+
+        int currentHighScore = 0;
+
+        SharedPreferences.Editor editor = getSharedPreferences("HIGH_SCORES", MODE_PRIVATE).edit();
+
+        //determine game mode
+        if(modeIn.equals("SIMON_SAYS")){
+         /* Fill pattern array with 100 random values that range between 1 and 4 */
+            prefKey = "SS_HIGH";
+            currentHighScore = ss_high;
+        }
+        else if(modeIn.equals("PLAYER_ADDS")){
+            prefKey = "PA_HIGH";
+            currentHighScore = pa_high;
+
+
+        }
+        else if(modeIn.equals("CHOOSE_YOUR_COLOR")){
+            prefKey = "CYC_HIGH";
+            currentHighScore = cyc_high;
+        }
 
 
         //if current score is higher than saved high score save to persistent data
+
+        if(scoreIn > currentHighScore){
+            currentHighScore = scoreIn;
+            editor.putInt(prefKey, currentHighScore);
+            editor.commit();
+        }
+
 
     }
 
