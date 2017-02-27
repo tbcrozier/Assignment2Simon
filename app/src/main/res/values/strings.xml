@@ -4,7 +4,7 @@
 <string name="about_title">Simon App</string>
 <string name="about_game">Simon is a game of memory and wits!</string>
 <string name="about_mode">Simon has 3 unique and challenging modes.</string>
-<string name="mode_question">Choose game mode:</string>
+<string name="mode_question">Choose Game Mode:</string>
 <string name="simon_says">Simon Says</string>
 <string name="player_adds">Player Adds</string>
 <string name="choose_color">Choose Your Color</string>
@@ -23,6 +23,6 @@
 <string name="ssh_label"><u>Simon Says</u></string>
 <string name="pah_label"><u>Player Adds</u></string>
 <string name="cyc_label"><u>Choose Your Color</u></string>
-    <string name="start_game_title">Simon</string>
+<string name="start_game_title">Simon</string>
 
 </resources>
