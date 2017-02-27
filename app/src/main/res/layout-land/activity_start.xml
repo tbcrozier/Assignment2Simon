@@ -176,44 +176,6 @@
 
     </LinearLayout>
 
-    <!--This layout does bottom horizontal colorful frame edging-->
-    <LinearLayout
-        android:orientation="horizontal"
-        android:layout_width="match_parent"
-        android:layout_height="10dp"
-        android:baselineAligned="false"
-        android:weightSum="4">
-
-        <LinearLayout
-            android:orientation="vertical"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:background="@color/colorRed"
-            android:layout_weight="1">
-        </LinearLayout>
-        <LinearLayout
-            android:orientation="vertical"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:background="@color/colorGreen"
-            android:layout_weight="1">
-        </LinearLayout>
-        <LinearLayout
-            android:orientation="vertical"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:background="@color/colorYellow"
-            android:layout_weight="1">
-        </LinearLayout>
-        <LinearLayout
-            android:orientation="vertical"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:background="@color/colorBlue"
-            android:layout_weight="1">
-        </LinearLayout>
-
-    </LinearLayout>
 
     <Button
         android:text="@string/play_simon_button"
@@ -341,46 +303,6 @@
 
     </LinearLayout>
 
-    <!--This layout does bottom horizontal colorful frame edging-->
-    <LinearLayout
-        android:orientation="horizontal"
-        android:layout_width="match_parent"
-        android:layout_height="10dp"
-        android:baselineAligned="false"
-        android:weightSum="4">
-
-        <LinearLayout
-            android:orientation="vertical"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:background="@color/colorGreen"
-            android:layout_weight="1">
-        </LinearLayout>
-        <LinearLayout
-            android:orientation="vertical"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:background="@color/colorYellow"
-            android:layout_weight="1">
-        </LinearLayout>
-        <LinearLayout
-            android:orientation="vertical"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:background="@color/colorBlue"
-            android:layout_weight="1">
-        </LinearLayout>
-        <LinearLayout
-            android:orientation="vertical"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:background="@color/colorRed"
-            android:layout_weight="1">
-        </LinearLayout>
-
-
-
-    </LinearLayout>
 
     <Button
         android:text="@string/about_simon_button"
@@ -504,44 +426,6 @@
             android:layout_weight="1">
         </LinearLayout>
 
-    </LinearLayout>
-
-    <!--This layout does bottom horizontal colorful frame edging-->
-    <LinearLayout
-        android:orientation="horizontal"
-        android:layout_width="match_parent"
-        android:layout_height="10dp"
-        android:baselineAligned="false"
-        android:weightSum="4">
-
-        <LinearLayout
-            android:orientation="vertical"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:background="@color/colorRed"
-            android:layout_weight="1">
-        </LinearLayout>
-        <LinearLayout
-            android:orientation="vertical"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:background="@color/colorGreen"
-            android:layout_weight="1">
-        </LinearLayout>
-        <LinearLayout
-            android:orientation="vertical"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:background="@color/colorYellow"
-            android:layout_weight="1">
-        </LinearLayout>
-        <LinearLayout
-            android:orientation="vertical"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:background="@color/colorBlue"
-            android:layout_weight="1">
-        </LinearLayout>
     </LinearLayout>
 
     <Button
