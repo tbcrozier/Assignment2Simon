@@ -754,7 +754,7 @@ public class GameActivity extends AppCompatActivity {
 
     void saveHighScore(int scoreIn, String modeIn){
         //determine game mode
-        
+        playerScore++;
 
         //get current saved high score
 
