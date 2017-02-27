@@ -730,6 +730,7 @@ public class GameActivity extends AppCompatActivity {
     /* If this stays Redundant fix it.  Right now no time.*/
     void playerLoses(){
         lockGameButtons();
+        saveHighScore(playerScore, modeResult);
         showYouLoseDialog();
     }
 
@@ -748,6 +749,17 @@ public class GameActivity extends AppCompatActivity {
         findViewById(R.id.blue_button).setClickable(true);
         findViewById(R.id.green_button).setClickable(true);
         findViewById(R.id.yellow_button).setClickable(true);
+
+    }
+
+    void saveHighScore(int scoreIn, String modeIn){
+        //determine game mode
+        
+
+        //get current saved high score
+
+
+        //if current score is higher than saved high score save to persistent data
 
     }
 
