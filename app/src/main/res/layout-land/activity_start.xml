@@ -58,84 +58,6 @@
         android:textStyle="normal|bold"
         android:gravity="center_horizontal" />
 
-    <!--This layout does bottom horizontal colorful frame edging-->
-    <LinearLayout
-        android:orientation="horizontal"
-        android:layout_width="match_parent"
-        android:layout_height="10dp"
-        android:baselineAligned="false"
-        android:weightSum="4">
-
-
-        <LinearLayout
-            android:orientation="vertical"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:background="@color/colorGreen"
-            android:layout_weight="1">
-        </LinearLayout>
-        <LinearLayout
-            android:orientation="vertical"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:background="@color/colorYellow"
-            android:layout_weight="1">
-        </LinearLayout>
-        <LinearLayout
-            android:orientation="vertical"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:background="@color/colorBlue"
-            android:layout_weight="1">
-        </LinearLayout>
-        <LinearLayout
-            android:orientation="vertical"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:background="@color/colorRed"
-            android:layout_weight="1">
-        </LinearLayout>
-
-    </LinearLayout>
-
-    <!--This layout does bottom horizontal colorful frame edging-->
-    <LinearLayout
-        android:orientation="horizontal"
-        android:layout_width="match_parent"
-        android:layout_height="10dp"
-        android:baselineAligned="false"
-        android:weightSum="4">
-
-        <LinearLayout
-            android:orientation="vertical"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:background="@color/colorYellow"
-            android:layout_weight="1">
-        </LinearLayout>
-        <LinearLayout
-            android:orientation="vertical"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:background="@color/colorBlue"
-            android:layout_weight="1">
-        </LinearLayout>
-        <LinearLayout
-            android:orientation="vertical"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:background="@color/colorRed"
-            android:layout_weight="1">
-        </LinearLayout>
-        <LinearLayout
-            android:orientation="vertical"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:background="@color/colorGreen"
-            android:layout_weight="1">
-        </LinearLayout>
-
-    </LinearLayout>
 
     <!--This layout does bottom horizontal colorful frame edging-->
     <LinearLayout
@@ -175,94 +97,18 @@
         </LinearLayout>
 
     </LinearLayout>
-
 
     <Button
         android:text="@string/play_simon_button"
+        android:textColor="@android:color/white"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/play_button" />
+        android:layout_height="40dp"
+        android:background="@color/colorGreen"
+        android:layout_margin="@dimen/activity_horizontal_margin"
+        android:id="@+id/play_button"
+        android:textSize="16sp"
+        android:textStyle="normal|bold" />
 
-    <!--This layout does bottom horizontal colorful frame edging-->
-    <LinearLayout
-        android:orientation="horizontal"
-        android:layout_width="match_parent"
-        android:layout_height="10dp"
-        android:baselineAligned="false"
-        android:weightSum="4">
-
-        <LinearLayout
-            android:orientation="vertical"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:background="@color/colorRed"
-            android:layout_weight="1">
-        </LinearLayout>
-
-        <LinearLayout
-            android:orientation="vertical"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:background="@color/colorGreen"
-            android:layout_weight="1">
-        </LinearLayout>
-        <LinearLayout
-            android:orientation="vertical"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:background="@color/colorYellow"
-            android:layout_weight="1">
-        </LinearLayout>
-        <LinearLayout
-            android:orientation="vertical"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:background="@color/colorBlue"
-            android:layout_weight="1">
-        </LinearLayout>
-
-    </LinearLayout>
-
-    <!--This layout does bottom horizontal colorful frame edging-->
-    <LinearLayout
-        android:orientation="horizontal"
-        android:layout_width="match_parent"
-        android:layout_height="10dp"
-        android:baselineAligned="false"
-        android:weightSum="4">
-
-        <LinearLayout
-            android:orientation="vertical"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:background="@color/colorBlue"
-            android:layout_weight="1">
-        </LinearLayout>
-        <LinearLayout
-            android:orientation="vertical"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:background="@color/colorRed"
-            android:layout_weight="1">
-        </LinearLayout>
-        <LinearLayout
-            android:orientation="vertical"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:background="@color/colorGreen"
-            android:layout_weight="1">
-        </LinearLayout>
-        <LinearLayout
-            android:orientation="vertical"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:background="@color/colorYellow"
-            android:layout_weight="1">
-        </LinearLayout>
-
-
-
-    </LinearLayout>
 
     <!--This layout does bottom horizontal colorful frame edging-->
     <LinearLayout
@@ -302,91 +148,18 @@
         </LinearLayout>
 
     </LinearLayout>
-
 
     <Button
         android:text="@string/about_simon_button"
+        android:textColor="@android:color/white"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/about_button" />
+        android:layout_height="40dp"
+        android:background="@color/colorBlue"
+        android:layout_margin="@dimen/activity_horizontal_margin"
+        android:id="@+id/about_button"
+        android:textSize="16sp"
+        android:textStyle="normal|bold" />
 
-    <!--This layout does bottom horizontal colorful frame edging-->
-    <LinearLayout
-        android:orientation="horizontal"
-        android:layout_width="match_parent"
-        android:layout_height="10dp"
-        android:baselineAligned="false"
-        android:weightSum="4">
-
-        <LinearLayout
-            android:orientation="vertical"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:background="@color/colorGreen"
-            android:layout_weight="1">
-        </LinearLayout>
-        <LinearLayout
-            android:orientation="vertical"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:background="@color/colorYellow"
-            android:layout_weight="1">
-        </LinearLayout>
-        <LinearLayout
-            android:orientation="vertical"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:background="@color/colorBlue"
-            android:layout_weight="1">
-        </LinearLayout>
-        <LinearLayout
-            android:orientation="vertical"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:background="@color/colorRed"
-            android:layout_weight="1">
-        </LinearLayout>
-
-    </LinearLayout>
-
-    <!--This layout does bottom horizontal colorful frame edging-->
-    <LinearLayout
-        android:orientation="horizontal"
-        android:layout_width="match_parent"
-        android:layout_height="10dp"
-        android:baselineAligned="false"
-        android:weightSum="4">
-
-        <LinearLayout
-            android:orientation="vertical"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:background="@color/colorYellow"
-            android:layout_weight="1">
-        </LinearLayout>
-        <LinearLayout
-            android:orientation="vertical"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:background="@color/colorBlue"
-            android:layout_weight="1">
-        </LinearLayout>
-        <LinearLayout
-            android:orientation="vertical"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:background="@color/colorRed"
-            android:layout_weight="1">
-        </LinearLayout>
-        <LinearLayout
-            android:orientation="vertical"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:background="@color/colorGreen"
-            android:layout_weight="1">
-        </LinearLayout>
-
-    </LinearLayout>
 
     <!--This layout does bottom horizontal colorful frame edging-->
     <LinearLayout
@@ -430,8 +203,54 @@
 
     <Button
         android:text="@string/exit_button"
+        android:textColor="@android:color/white"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/exit_button"/>
+        android:layout_height="40dp"
+        android:background="@color/colorRed"
+        android:layout_margin="@dimen/activity_horizontal_margin"
+        android:id="@+id/exit_button"
+        android:textSize="16sp"
+        android:textStyle="normal|bold" />
+
+    <!--This layout does bottom horizontal colorful frame edging-->
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="10dp"
+        android:baselineAligned="false"
+        android:weightSum="4">
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/colorRed"
+            android:layout_weight="1">
+        </LinearLayout>
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/colorYellow"
+            android:layout_weight="1">
+        </LinearLayout>
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/colorGreen"
+            android:layout_weight="1">
+        </LinearLayout>
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/colorBlue"
+            android:layout_weight="1">
+        </LinearLayout>
+
+
+    </LinearLayout>
+
 
 </LinearLayout>

@@ -179,11 +179,13 @@ android:background="@color/colorBlack">
 
 <Button
     android:text="@string/play_simon_button"
+    android:textColor="@android:color/white"
     android:layout_width="match_parent"
     android:layout_height="40dp"
     android:background="@color/colorGreen"
     android:layout_margin="@dimen/activity_horizontal_margin"
-    android:id="@+id/play_button" />
+    android:id="@+id/play_button"
+    android:textSize="16sp" />
 
 <!--This layout does bottom horizontal colorful frame edging-->
 <LinearLayout
@@ -308,11 +310,13 @@ android:background="@color/colorBlack">
 
     <Button
     android:text="@string/about_simon_button"
+    android:textColor="@android:color/white"
     android:layout_width="match_parent"
     android:layout_height="40dp"
     android:background="@color/colorBlue"
     android:layout_margin="@dimen/activity_horizontal_margin"
-    android:id="@+id/about_button" />
+    android:id="@+id/about_button"
+        android:textSize="16sp" />
 
 <!--This layout does bottom horizontal colorful frame edging-->
 <LinearLayout
@@ -434,11 +438,13 @@ android:background="@color/colorBlack">
 
 <Button
     android:text="@string/exit_button"
+    android:textColor="@android:color/white"
     android:layout_width="match_parent"
     android:layout_height="40dp"
     android:background="@color/colorRed"
     android:layout_margin="@dimen/activity_horizontal_margin"
-    android:id="@+id/exit_button"/>
+    android:id="@+id/exit_button"
+    android:textSize="16sp" />
 
 <!--This layout does the top horizontal colorful frame edging-->
 <LinearLayout

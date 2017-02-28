@@ -17,17 +17,24 @@
 
 
 
-        <Button
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/simonsays_button"
-            android:text="@string/simon_says"/>
+    <Button
+        android:textColor="@android:color/white"
+        android:layout_width="match_parent"
+        android:layout_height="25dp"
+        android:background="@color/colorGreen"
+        android:layout_margin="@dimen/activity_horizontal_margin"
+        android:id="@+id/simonsays_button"
+        android:text="@string/simon_says"
+        android:textSize="16sp" />
 
 
 
         <Button
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="25dp"
+            android:background="@color/colorBlue"
+            android:textColor="@android:color/white"
+            android:layout_margin="@dimen/activity_horizontal_margin"
             android:id="@+id/playeradds_button"
             android:text="@string/player_adds" />
 
@@ -35,7 +42,10 @@
 
         <Button
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="25dp"
+            android:background="@color/colorRed"
+            android:textColor="@android:color/white"
+            android:layout_margin="@dimen/activity_horizontal_margin"
             android:id="@+id/choosecolor_button"
             android:text="@string/choose_color" />
 
@@ -60,7 +70,6 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/sshlabel_tv"
-            android:layout_marginBottom="0dp"
             android:textSize="15sp"
             android:textAlignment="center"
             android:text="@string/ssh_label"
@@ -72,8 +81,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/pahlabel_tv"
-            android:layout_marginBottom="0dp"
-            android:textSize="13sp"
+            android:textSize="15sp"
             android:textAlignment="center"
             android:textColor="@android:color/white"
             android:layout_weight="1"/>
@@ -83,7 +91,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/cyclabel_tv"
-            android:textSize="13sp"
+            android:textSize="15sp"
             android:textAlignment="center"
             android:textColor="@android:color/white"
             android:layout_weight="1"/>
