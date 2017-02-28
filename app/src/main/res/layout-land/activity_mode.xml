@@ -6,6 +6,60 @@
     android:background="@color/colorBlack"
     android:id="@+id/activity_mode">
 
+    <!--This layout does the top horizontal colorful frame edging-->
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="10dp"
+        android:baselineAligned="false"
+        android:weightSum="4">
+
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/colorGreen"
+            android:layout_weight="1">
+        </LinearLayout>
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/colorYellow"
+            android:layout_weight="1">
+        </LinearLayout>
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/colorBlue"
+            android:layout_weight="1">
+        </LinearLayout>
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/colorRed"
+            android:layout_weight="1">
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <!--Title & side color frame -->
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:weightSum="1">
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="10dp"
+            android:layout_height="match_parent"
+            android:background="@color/colorYellow">
+        </LinearLayout>
+
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -14,27 +68,74 @@
             android:text="@string/mode_question"
             android:textColor="@android:color/white"
             android:textSize="30sp"
-            android:textStyle="normal|bold" />
+            android:textStyle="normal|bold"
+            android:layout_weight="1"/>
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="10dp"
+            android:layout_height="match_parent"
+            android:background="@color/colorBlue">
+        </LinearLayout>
+
+    </LinearLayout>
 
 
 
-    <Button
-        android:textColor="@android:color/white"
+    <!--Buttons & side color frame -->
+    <LinearLayout
+        android:orientation="horizontal"
         android:layout_width="match_parent"
-        android:layout_height="25dp"
-        android:background="@color/colorGreen"
-        android:id="@+id/simonsays_button"
-        android:text="@string/simon_says"
-        android:textSize="16sp"
-        android:layout_marginBottom="10dp"
-        android:layout_marginTop="10dp"
-        android:layout_marginRight="20dp"
-        android:layout_marginLeft="20dp" />
+        android:layout_height="wrap_content"
+        android:weightSum="1">
 
-
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="10dp"
+            android:layout_height="match_parent"
+            android:background="@color/colorBlue">
+        </LinearLayout>
 
         <Button
-            android:layout_width="match_parent"
+            android:textColor="@android:color/white"
+            android:layout_width="0dp"
+            android:layout_height="25dp"
+            android:background="@color/colorGreen"
+            android:id="@+id/simonsays_button"
+            android:text="@string/simon_says"
+            android:textSize="16sp"
+            android:layout_marginBottom="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginLeft="20dp"
+            android:layout_weight="1"/>
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="10dp"
+            android:layout_height="match_parent"
+            android:background="@color/colorYellow">
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+    <!--Buttons & side color frame -->
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:weightSum="1">
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="10dp"
+            android:layout_height="match_parent"
+            android:background="@color/colorBlue">
+        </LinearLayout>
+
+        <Button
+            android:layout_width="0dp"
             android:layout_height="25dp"
             android:background="@color/colorBlue"
             android:textColor="@android:color/white"
@@ -43,12 +144,34 @@
             android:layout_marginBottom="10dp"
             android:layout_marginLeft="20dp"
             android:layout_marginRight="20dp"
-            android:layout_marginTop="10dp" />
+            android:layout_marginTop="10dp"
+            android:layout_weight="1"/>
 
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="10dp"
+            android:layout_height="match_parent"
+            android:background="@color/colorYellow">
+        </LinearLayout>
 
+    </LinearLayout>
+
+    <!--Buttons & side color frame -->
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:weightSum="1">
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="10dp"
+            android:layout_height="match_parent"
+            android:background="@color/colorBlue">
+        </LinearLayout>
 
         <Button
-            android:layout_width="match_parent"
+            android:layout_width="0dp"
             android:layout_height="25dp"
             android:background="@color/colorRed"
             android:textColor="@android:color/white"
@@ -57,18 +180,54 @@
             android:layout_marginBottom="10dp"
             android:layout_marginLeft="20dp"
             android:layout_marginRight="20dp"
-            android:layout_marginTop="10dp" />
+            android:layout_marginTop="10dp"
+            android:layout_weight="1"/>
 
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="10dp"
+            android:layout_height="match_parent"
+            android:background="@color/colorYellow">
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+    <!--Buttons & side color frame -->
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:weightSum="1">
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="10dp"
+            android:layout_height="match_parent"
+            android:background="@color/colorBlue">
+        </LinearLayout>
 
         <TextView
-            android:layout_width="match_parent"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:id="@+id/high_score_tv"
             android:textAlignment="center"
             android:textSize="19sp"
             android:layout_marginBottom="10sp"
             android:text="@string/high_Score_label"
-            android:textColor="@android:color/white" />
+            android:textColor="@android:color/white"
+            android:layout_weight="1"/>
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="10dp"
+            android:layout_height="match_parent"
+            android:background="@color/colorYellow">
+        </LinearLayout>
+
+    </LinearLayout>
+
+
 
     <LinearLayout
         android:orientation="horizontal"
@@ -76,6 +235,12 @@
         android:layout_height="wrap_content"
         android:weightSum="3">
 
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="10dp"
+            android:layout_height="match_parent"
+            android:background="@color/colorBlue">
+        </LinearLayout>
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -105,6 +270,12 @@
             android:textAlignment="center"
             android:textColor="@android:color/white"
             android:layout_weight="1"/>
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="10dp"
+            android:layout_height="match_parent"
+            android:background="@color/colorBlue">
+        </LinearLayout>
 
     </LinearLayout>
 
@@ -113,6 +284,13 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:weightSum="3">
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="10dp"
+            android:layout_height="match_parent"
+            android:background="@color/colorBlue">
+        </LinearLayout>
             <TextView
                 android:text="0"
                 android:layout_width="match_parent"
@@ -142,6 +320,52 @@
                 android:layout_marginBottom="15dp"
                 android:layout_weight="1"
                 android:textColor="@android:color/white"/>
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="10dp"
+            android:layout_height="match_parent"
+            android:background="@color/colorBlue">
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <!--This layout does the bottom horizontal colorful frame edging-->
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="10dp"
+        android:baselineAligned="false"
+        android:weightSum="4">
+
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/colorGreen"
+            android:layout_weight="1">
+        </LinearLayout>
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/colorYellow"
+            android:layout_weight="1">
+        </LinearLayout>
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/colorBlue"
+            android:layout_weight="1">
+        </LinearLayout>
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/colorRed"
+            android:layout_weight="1">
+        </LinearLayout>
 
     </LinearLayout>
 
