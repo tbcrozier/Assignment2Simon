@@ -45,18 +45,43 @@
 
     </LinearLayout>
 
-    <TextView
-        android:text="@string/about_title"
+    <!--Buttons & side color frame -->
+    <LinearLayout
+        android:orientation="horizontal"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/about_title_tv"
-        android:textColor="@android:color/white"
-        android:textSize="40sp"
-        android:layout_gravity="center_vertical|center_horizontal|center"
-        android:fontFamily="monospace"
-        android:typeface="monospace"
-        android:textStyle="normal|bold"
-        android:gravity="center_horizontal" />
+        android:weightSum="1">
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="10dp"
+            android:layout_height="match_parent"
+            android:background="@color/colorBlue">
+        </LinearLayout>
+
+        <TextView
+            android:text="@string/about_title"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/about_title_tv"
+            android:textColor="@android:color/white"
+            android:textSize="40sp"
+            android:layout_gravity="center_vertical|center_horizontal|center"
+            android:fontFamily="monospace"
+            android:typeface="monospace"
+            android:textStyle="normal|bold"
+            android:gravity="center_horizontal"
+            android:layout_weight="1"/>
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="10dp"
+            android:layout_height="match_parent"
+            android:background="@color/colorYellow">
+        </LinearLayout>
+
+    </LinearLayout>
+
 
     <!--This layout does bottom horizontal colorful frame edging-->
     <LinearLayout
@@ -98,19 +123,45 @@
 
     </LinearLayout>
 
-    <TextView
-        android:text="@string/about_game"
+    <!--Buttons & side color frame -->
+    <LinearLayout
+        android:orientation="horizontal"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/about_game_tv"
-        android:textColor="@android:color/white"
-        android:textSize="20sp"
-        android:layout_gravity="center_vertical|center_horizontal|center"
-        android:fontFamily="monospace"
-        android:typeface="monospace"
-        android:textStyle="normal|bold"
-        android:gravity="center_horizontal"
-        android:paddingTop="5dp" />
+        android:weightSum="1">
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="10dp"
+            android:layout_height="match_parent"
+            android:background="@color/colorBlue">
+        </LinearLayout>
+
+        <TextView
+            android:text="@string/about_game"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/about_game_tv"
+            android:textColor="@android:color/white"
+            android:textSize="20sp"
+            android:layout_gravity="center_vertical|center_horizontal|center"
+            android:fontFamily="monospace"
+            android:typeface="monospace"
+            android:textStyle="normal|bold"
+            android:gravity="center_horizontal"
+            android:paddingTop="5dp"
+            android:layout_weight="1"/>
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="10dp"
+            android:layout_height="match_parent"
+            android:background="@color/colorYellow">
+        </LinearLayout>
+
+    </LinearLayout>
+
+
 
     <!--This layout does bottom horizontal colorful frame edging-->
     <LinearLayout
@@ -152,19 +203,46 @@
 
     </LinearLayout>
 
-    <TextView
-        android:text="@string/about_mode"
+    <!--Buttons & side color frame -->
+    <LinearLayout
+        android:orientation="horizontal"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/about_mode_tv"
-        android:textColor="@android:color/white"
-        android:textSize="20sp"
-        android:layout_gravity="center_vertical|center_horizontal|center"
-        android:fontFamily="monospace"
-        android:typeface="monospace"
-        android:textStyle="normal|bold"
-        android:gravity="center_horizontal"
-        android:paddingTop="5dp" />
+        android:weightSum="1">
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="10dp"
+            android:layout_height="match_parent"
+            android:background="@color/colorBlue">
+        </LinearLayout>
+
+        <TextView
+            android:text="@string/about_mode"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/about_mode_tv"
+            android:textColor="@android:color/white"
+            android:textSize="20sp"
+            android:layout_gravity="center_vertical|center_horizontal|center"
+            android:fontFamily="monospace"
+            android:typeface="monospace"
+            android:textStyle="normal|bold"
+            android:gravity="center_horizontal"
+            android:paddingTop="5dp"
+            android:layout_weight="1"/>
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="10dp"
+            android:layout_height="match_parent"
+            android:background="@color/colorYellow">
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+
 
 
     <LinearLayout
@@ -174,6 +252,15 @@
         android:baselineAligned="false"
         android:weightSum="3">
     <!--These are textviews describing the different game modes-->
+
+        <!--This provides vertical color frame-->
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="10dp"
+            android:layout_height="match_parent"
+            android:background="@color/colorBlue">
+        </LinearLayout>
+
     <TextView
         android:text="@string/about_game_name_1_tv"
         android:layout_width="match_parent"
@@ -216,6 +303,13 @@
         android:gravity="center_horizontal"
         android:paddingTop="5dp"
         android:layout_weight="1"/>
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="10dp"
+            android:layout_height="match_parent"
+            android:background="@color/colorYellow">
+        </LinearLayout>
 
         </LinearLayout>
 
