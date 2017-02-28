@@ -20,7 +20,7 @@
             android:id="@+id/blue_button"
             android:layout_alignTop="@+id/yellow_button"
             android:minHeight="80dp"
-            android:minWidth="80dp" />
+            android:minWidth="180dp" />
 
         <Button
             android:text="@string/red_color"
@@ -33,10 +33,10 @@
             android:layout_alignBottom="@+id/green_button"
             android:layout_alignParentEnd="true"
             android:minHeight="80dp"
-            android:minWidth="80dp" />
+            android:minWidth="180dp" />
 
         <Button
-            android:text="Start Game"
+            android:text="@string/start_game"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
@@ -44,7 +44,7 @@
             android:layout_alignParentTop="true" />
 
         <TextView
-            android:text="Score:"
+            android:text="@string/score"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/score_tv"
@@ -59,7 +59,7 @@
         android:layout_height="wrap_content"
         android:id="@+id/yellow_button"
         android:minHeight="80dp"
-        android:minWidth="80dp"
+        android:minWidth="180dp"
         android:layout_above="@+id/score_tv"
         android:layout_alignStart="@+id/green_button" />
 
@@ -70,7 +70,7 @@
             android:layout_height="wrap_content"
             android:id="@+id/green_button"
             android:minHeight="80dp"
-            android:minWidth="80dp"
+            android:minWidth="180dp"
         android:layout_marginBottom="16dp"
         android:layout_above="@+id/yellow_button"
         android:layout_toEndOf="@+id/score_tv" />
