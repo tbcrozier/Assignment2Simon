@@ -19,6 +19,13 @@ android:background="@color/colorBlack">
         android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:background="@color/colorRed"
+        android:layout_weight="1">
+    </LinearLayout>
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
         android:background="@color/colorGreen"
         android:layout_weight="1">
     </LinearLayout>
@@ -34,13 +41,6 @@ android:background="@color/colorBlack">
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@color/colorBlue"
-        android:layout_weight="1">
-    </LinearLayout>
-    <LinearLayout
-        android:orientation="vertical"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="@color/colorRed"
         android:layout_weight="1">
     </LinearLayout>
 
@@ -67,21 +67,54 @@ android:background="@color/colorBlack">
     android:baselineAligned="false"
     android:weightSum="4">
 
-
     <LinearLayout
         android:orientation="vertical"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:background="@color/colorBlue"
+        android:layout_weight="0.5">
+    </LinearLayout>
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:background="@color/colorRed"
+        android:layout_weight="1">
+    </LinearLayout>
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="wrap_content"
         android:layout_height="match_parent"
         android:background="@color/colorGreen"
         android:layout_weight="1">
     </LinearLayout>
     <LinearLayout
         android:orientation="vertical"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="match_parent"
         android:background="@color/colorYellow"
         android:layout_weight="1">
     </LinearLayout>
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:background="@color/colorBlue"
+        android:layout_weight="0.5">
+    </LinearLayout>
+
+
+</LinearLayout>
+
+<!--This layout does bottom horizontal colorful frame edging-->
+<LinearLayout
+    android:orientation="horizontal"
+    android:layout_width="match_parent"
+    android:layout_height="20dp"
+    android:baselineAligned="false"
+    android:weightSum="4">
+
+
     <LinearLayout
         android:orientation="vertical"
         android:layout_width="match_parent"
@@ -94,6 +127,20 @@ android:background="@color/colorBlack">
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@color/colorRed"
+        android:layout_weight="1">
+    </LinearLayout>
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/colorGreen"
+        android:layout_weight="1">
+    </LinearLayout>
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/colorYellow"
         android:layout_weight="1">
     </LinearLayout>
 
@@ -107,72 +154,41 @@ android:background="@color/colorBlack">
     android:baselineAligned="false"
     android:weightSum="4">
 
+
     <LinearLayout
         android:orientation="vertical"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="match_parent"
         android:background="@color/colorYellow"
-        android:layout_weight="1">
+        android:layout_weight="0.5">
     </LinearLayout>
     <LinearLayout
         android:orientation="vertical"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="match_parent"
         android:background="@color/colorBlue"
         android:layout_weight="1">
     </LinearLayout>
     <LinearLayout
         android:orientation="vertical"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="match_parent"
         android:background="@color/colorRed"
         android:layout_weight="1">
     </LinearLayout>
     <LinearLayout
         android:orientation="vertical"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="@color/colorGreen"
-        android:layout_weight="1">
-    </LinearLayout>
-
-</LinearLayout>
-
-<!--This layout does bottom horizontal colorful frame edging-->
-<LinearLayout
-    android:orientation="horizontal"
-    android:layout_width="match_parent"
-    android:layout_height="20dp"
-    android:baselineAligned="false"
-    android:weightSum="4">
-
-    <LinearLayout
-        android:orientation="vertical"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="@color/colorBlue"
-        android:layout_weight="1">
-    </LinearLayout>
-    <LinearLayout
-        android:orientation="vertical"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="@color/colorRed"
-        android:layout_weight="1">
-    </LinearLayout>
-    <LinearLayout
-        android:orientation="vertical"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="match_parent"
         android:background="@color/colorGreen"
         android:layout_weight="1">
     </LinearLayout>
     <LinearLayout
         android:orientation="vertical"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="match_parent"
         android:background="@color/colorYellow"
-        android:layout_weight="1">
+        android:layout_weight="0.5">
     </LinearLayout>
 
 </LinearLayout>
@@ -195,6 +211,14 @@ android:background="@color/colorBlack">
     android:baselineAligned="false"
     android:weightSum="4">
 
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/colorYellow"
+        android:layout_weight="1">
+    </LinearLayout>
     <LinearLayout
         android:orientation="vertical"
         android:layout_width="match_parent"
@@ -214,13 +238,6 @@ android:background="@color/colorBlack">
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@color/colorGreen"
-        android:layout_weight="1">
-    </LinearLayout>
-    <LinearLayout
-        android:orientation="vertical"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="@color/colorYellow"
         android:layout_weight="1">
     </LinearLayout>
 
@@ -238,31 +255,38 @@ android:background="@color/colorBlack">
 
     <LinearLayout
         android:orientation="vertical"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:background="@color/colorGreen"
+        android:layout_weight="0.5">
+    </LinearLayout>
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="wrap_content"
         android:layout_height="match_parent"
         android:background="@color/colorYellow"
         android:layout_weight="1">
     </LinearLayout>
     <LinearLayout
         android:orientation="vertical"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="match_parent"
         android:background="@color/colorBlue"
         android:layout_weight="1">
     </LinearLayout>
     <LinearLayout
         android:orientation="vertical"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="match_parent"
         android:background="@color/colorRed"
         android:layout_weight="1">
     </LinearLayout>
     <LinearLayout
         android:orientation="vertical"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="match_parent"
         android:background="@color/colorGreen"
-        android:layout_weight="1">
+        android:layout_weight="0.5">
     </LinearLayout>
 
 </LinearLayout>
@@ -275,35 +299,35 @@ android:background="@color/colorBlack">
     android:baselineAligned="false"
     android:weightSum="4">
 
+
     <LinearLayout
         android:orientation="vertical"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="match_parent"
         android:background="@color/colorGreen"
         android:layout_weight="1">
     </LinearLayout>
     <LinearLayout
         android:orientation="vertical"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="match_parent"
         android:background="@color/colorYellow"
         android:layout_weight="1">
     </LinearLayout>
     <LinearLayout
         android:orientation="vertical"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="match_parent"
         android:background="@color/colorBlue"
         android:layout_weight="1">
     </LinearLayout>
     <LinearLayout
         android:orientation="vertical"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="match_parent"
         android:background="@color/colorRed"
         android:layout_weight="1">
     </LinearLayout>
-
 
 
 </LinearLayout>
@@ -326,72 +350,41 @@ android:background="@color/colorBlack">
     android:baselineAligned="false"
     android:weightSum="4">
 
+
     <LinearLayout
         android:orientation="vertical"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="match_parent"
         android:background="@color/colorGreen"
-        android:layout_weight="1">
+        android:layout_weight="0.5">
     </LinearLayout>
     <LinearLayout
         android:orientation="vertical"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="match_parent"
         android:background="@color/colorYellow"
         android:layout_weight="1">
     </LinearLayout>
     <LinearLayout
         android:orientation="vertical"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="match_parent"
         android:background="@color/colorBlue"
         android:layout_weight="1">
     </LinearLayout>
     <LinearLayout
         android:orientation="vertical"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="@color/colorRed"
-        android:layout_weight="1">
-    </LinearLayout>
-
-</LinearLayout>
-
-<!--This layout does bottom horizontal colorful frame edging-->
-<LinearLayout
-    android:orientation="horizontal"
-    android:layout_width="match_parent"
-    android:layout_height="20dp"
-    android:baselineAligned="false"
-    android:weightSum="4">
-
-    <LinearLayout
-        android:orientation="vertical"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="@color/colorYellow"
-        android:layout_weight="1">
-    </LinearLayout>
-    <LinearLayout
-        android:orientation="vertical"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="@color/colorBlue"
-        android:layout_weight="1">
-    </LinearLayout>
-    <LinearLayout
-        android:orientation="vertical"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="match_parent"
         android:background="@color/colorRed"
         android:layout_weight="1">
     </LinearLayout>
     <LinearLayout
         android:orientation="vertical"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="match_parent"
         android:background="@color/colorGreen"
-        android:layout_weight="1">
+        android:layout_weight="0.5">
     </LinearLayout>
 
 </LinearLayout>
@@ -407,31 +400,77 @@ android:background="@color/colorBlack">
 
     <LinearLayout
         android:orientation="vertical"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:background="@color/colorYellow"
+        android:layout_weight="1">
+    </LinearLayout>
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="wrap_content"
         android:layout_height="match_parent"
         android:background="@color/colorBlue"
         android:layout_weight="1">
     </LinearLayout>
     <LinearLayout
         android:orientation="vertical"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="match_parent"
         android:background="@color/colorRed"
         android:layout_weight="1">
     </LinearLayout>
     <LinearLayout
         android:orientation="vertical"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:background="@color/colorGreen"
+        android:layout_weight="1">
+    </LinearLayout>
+
+</LinearLayout>
+
+<!--This layout does bottom horizontal colorful frame edging-->
+<LinearLayout
+    android:orientation="horizontal"
+    android:layout_width="match_parent"
+    android:layout_height="20dp"
+    android:baselineAligned="false"
+    android:weightSum="4">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:background="@color/colorYellow"
+        android:layout_weight="0.5">
+    </LinearLayout>
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:background="@color/colorBlue"
+        android:layout_weight="1">
+    </LinearLayout>
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:background="@color/colorRed"
+        android:layout_weight="1">
+    </LinearLayout>
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="wrap_content"
         android:layout_height="match_parent"
         android:background="@color/colorGreen"
         android:layout_weight="1">
     </LinearLayout>
     <LinearLayout
         android:orientation="vertical"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="match_parent"
         android:background="@color/colorYellow"
-        android:layout_weight="1">
+        android:layout_weight="0.5">
     </LinearLayout>
 
 </LinearLayout>
@@ -457,33 +496,33 @@ android:background="@color/colorBlack">
 
         <LinearLayout
             android:orientation="vertical"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:background="@color/colorGreen"
-            android:layout_weight="1">
-        </LinearLayout>
-        <LinearLayout
-            android:orientation="vertical"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:background="@color/colorYellow"
-            android:layout_weight="1">
-        </LinearLayout>
-        <LinearLayout
-            android:orientation="vertical"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:background="@color/colorBlue"
             android:layout_weight="1">
         </LinearLayout>
         <LinearLayout
             android:orientation="vertical"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:background="@color/colorRed"
             android:layout_weight="1">
         </LinearLayout>
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:background="@color/colorGreen"
+            android:layout_weight="1">
+        </LinearLayout>
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:background="@color/colorYellow"
+            android:layout_weight="1">
+        </LinearLayout>
 
-</LinearLayout>
+    </LinearLayout>
 
 </LinearLayout>

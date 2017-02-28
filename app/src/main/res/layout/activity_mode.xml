@@ -154,7 +154,8 @@
         android:id="@+id/playeradds_button"
         android:background="@color/colorRed"
         android:layout_margin="@dimen/activity_horizontal_margin"
-        android:text="@string/player_adds" />
+        android:text="@string/player_adds"
+        android:textSize="16sp" />
 
     <!--This layout does the top horizontal colorful frame edging-->
     <LinearLayout
@@ -203,7 +204,8 @@
         android:id="@+id/choosecolor_button"
         android:background="@color/colorRed"
         android:layout_margin="@dimen/activity_horizontal_margin"
-        android:text="@string/choose_color" />
+        android:text="@string/choose_color"
+        android:textSize="16sp" />
 
     <!--This layout does the top horizontal colorful frame edging-->
     <LinearLayout
@@ -453,7 +455,7 @@
     <LinearLayout
         android:orientation="horizontal"
         android:layout_width="match_parent"
-        android:layout_height="20dp"
+        android:layout_height="15dp"
         android:baselineAligned="false"
         android:weightSum="4">
 
