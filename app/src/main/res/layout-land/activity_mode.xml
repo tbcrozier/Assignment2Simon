@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/colorBlack"
     android:id="@+id/activity_mode">
@@ -22,10 +23,13 @@
         android:layout_width="match_parent"
         android:layout_height="25dp"
         android:background="@color/colorGreen"
-        android:layout_margin="@dimen/activity_horizontal_margin"
         android:id="@+id/simonsays_button"
         android:text="@string/simon_says"
-        android:textSize="16sp" />
+        android:textSize="16sp"
+        android:layout_marginBottom="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginLeft="20dp" />
 
 
 
@@ -34,9 +38,12 @@
             android:layout_height="25dp"
             android:background="@color/colorBlue"
             android:textColor="@android:color/white"
-            android:layout_margin="@dimen/activity_horizontal_margin"
             android:id="@+id/playeradds_button"
-            android:text="@string/player_adds" />
+            android:text="@string/player_adds"
+            android:layout_marginBottom="10dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginTop="10dp" />
 
 
 
@@ -45,9 +52,12 @@
             android:layout_height="25dp"
             android:background="@color/colorRed"
             android:textColor="@android:color/white"
-            android:layout_margin="@dimen/activity_horizontal_margin"
             android:id="@+id/choosecolor_button"
-            android:text="@string/choose_color" />
+            android:text="@string/choose_color"
+            android:layout_marginBottom="10dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginTop="10dp" />
 
 
         <TextView
