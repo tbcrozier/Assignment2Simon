@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:id="@+id/activity_game"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/colorBlack"
+        android:paddingBottom="@dimen/activity_vertical_margin"
+        android:paddingLeft="@dimen/activity_horizontal_margin"
+        android:paddingRight="@dimen/activity_horizontal_margin"
+        android:paddingTop="@dimen/activity_vertical_margin"
+        tools:context="com.davidroach.assignment2simon.Start">
+
+        <Button
+            android:text="@string/blue_color"
+            android:background="@color/colorBlue"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignEnd="@+id/red_button"
+            android:id="@+id/blue_button"
+            android:layout_alignTop="@+id/yellow_button"
+            android:minHeight="80dp"
+            android:minWidth="80dp" />
+
+        <Button
+            android:text="@string/red_color"
+            android:background="@color/colorRed"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="50dp"
+            android:id="@+id/red_button"
+            android:layout_alignBaseline="@+id/green_button"
+            android:layout_alignBottom="@+id/green_button"
+            android:layout_alignParentEnd="true"
+            android:minHeight="80dp"
+            android:minWidth="80dp" />
+
+        <Button
+            android:text="Start Game"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:id="@+id/startGameButton"
+            android:layout_alignParentTop="true" />
+
+        <TextView
+            android:text="Score:"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/score_tv"
+            android:textSize="20sp"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentStart="true" />
+
+    <Button
+        android:text="@string/yellow_color"
+        android:background="@color/colorYellow"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/yellow_button"
+        android:minHeight="80dp"
+        android:minWidth="80dp"
+        android:layout_above="@+id/score_tv"
+        android:layout_alignStart="@+id/green_button" />
+
+    <Button
+            android:text="@string/green_color"
+            android:background="@color/colorGreen"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/green_button"
+            android:minHeight="80dp"
+            android:minWidth="80dp"
+        android:layout_marginBottom="16dp"
+        android:layout_above="@+id/yellow_button"
+        android:layout_toEndOf="@+id/score_tv" />
+</RelativeLayout>
