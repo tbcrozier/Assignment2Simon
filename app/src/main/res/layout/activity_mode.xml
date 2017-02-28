@@ -11,7 +11,7 @@
     <LinearLayout
         android:orientation="horizontal"
         android:layout_width="match_parent"
-        android:layout_height="20dp"
+        android:layout_height="15dp"
         android:baselineAligned="false"
         android:weightSum="4">
 
@@ -41,7 +41,7 @@
             android:orientation="vertical"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:background="@color/colorRed"
+            android:background="@color/colorGreen"
             android:layout_weight="1">
         </LinearLayout>
 
@@ -61,7 +61,7 @@
     <LinearLayout
         android:orientation="horizontal"
         android:layout_width="match_parent"
-        android:layout_height="20dp"
+        android:layout_height="15dp"
         android:baselineAligned="false"
         android:weightSum="4">
 
@@ -83,7 +83,7 @@
             android:orientation="vertical"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:background="@color/colorRed"
+            android:background="@color/colorBlue"
             android:layout_weight="1">
         </LinearLayout>
         <LinearLayout
@@ -97,16 +97,21 @@
     </LinearLayout>
 
     <Button
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
         android:id="@+id/simonsays_button"
-        android:text="@string/simon_says"/>
+
+    android:text="@string/simon_says"
+    android:textColor="@android:color/white"
+    android:layout_width="match_parent"
+    android:layout_height="25dp"
+    android:background="@color/colorRed"
+    android:layout_margin="@dimen/activity_horizontal_margin"
+    android:textSize="16sp"/>
 
     <!--This layout does the top horizontal colorful frame edging-->
     <LinearLayout
         android:orientation="horizontal"
         android:layout_width="match_parent"
-        android:layout_height="20dp"
+        android:layout_height="15dp"
         android:baselineAligned="false"
         android:weightSum="4">
 
@@ -114,7 +119,7 @@
             android:orientation="vertical"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:background="@color/colorRed"
+            android:background="@color/colorYellow"
             android:layout_weight="1">
         </LinearLayout>
         <LinearLayout
@@ -144,15 +149,18 @@
 
     <Button
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="25dp"
+        android:textColor="@android:color/white"
         android:id="@+id/playeradds_button"
+        android:background="@color/colorRed"
+        android:layout_margin="@dimen/activity_horizontal_margin"
         android:text="@string/player_adds" />
 
     <!--This layout does the top horizontal colorful frame edging-->
     <LinearLayout
         android:orientation="horizontal"
         android:layout_width="match_parent"
-        android:layout_height="20dp"
+        android:layout_height="15dp"
         android:baselineAligned="false"
         android:weightSum="4">
 
@@ -175,7 +183,7 @@
             android:orientation="vertical"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:background="@color/colorRed"
+            android:background="@color/colorGreen"
             android:layout_weight="1">
         </LinearLayout>
         <LinearLayout
@@ -190,15 +198,18 @@
 
     <Button
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="25dp"
+        android:textColor="@android:color/white"
         android:id="@+id/choosecolor_button"
+        android:background="@color/colorRed"
+        android:layout_margin="@dimen/activity_horizontal_margin"
         android:text="@string/choose_color" />
 
     <!--This layout does the top horizontal colorful frame edging-->
     <LinearLayout
         android:orientation="horizontal"
         android:layout_width="match_parent"
-        android:layout_height="20dp"
+        android:layout_height="15dp"
         android:baselineAligned="false"
         android:weightSum="4">
 
@@ -207,7 +218,7 @@
             android:orientation="vertical"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:background="@color/colorRed"
+            android:background="@color/colorYellow"
             android:layout_weight="1">
         </LinearLayout>
         <LinearLayout
