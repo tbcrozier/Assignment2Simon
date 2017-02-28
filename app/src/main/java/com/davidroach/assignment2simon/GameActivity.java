@@ -31,19 +31,16 @@ public class GameActivity extends AppCompatActivity {
 
     private SoundPool soundPool;
     private Set<Integer> soundsLoaded;
-
-
-
     Button greenButton;
     Button redButton;
     Button yellowButton;
     Button blueButton;
-
     TextView scoreTextView;
 
     String modeResult;
 
     boolean paAddFlag = false;
+    boolean isCyCFirstTurn = true;
 
     int[] pattern;
 
@@ -62,14 +59,12 @@ public class GameActivity extends AppCompatActivity {
     int razzButtonSoundID;
 
 
-
-
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_game);
+
+        lockGameButtons();
 
 
         //get game mode selection
@@ -87,9 +82,6 @@ public class GameActivity extends AppCompatActivity {
         yellowButton = (Button) findViewById(R.id.yellow_button);
         blueButton = (Button) findViewById(R.id.blue_button);
 
-
-
-
         lockGameButtons();
 
         playerScore = 0;
@@ -106,16 +98,6 @@ public class GameActivity extends AppCompatActivity {
                 play(modeResult);
             }
         });
-
-
-
-
-
-        //set on release listeners
-
-
-
-
 
     }
 
@@ -188,10 +170,13 @@ public class GameActivity extends AppCompatActivity {
          /* bot turn */
          paBotPlay();
 
-
      }
      else if(modeIn.equals("CHOOSE_YOUR_COLOR")){
+
+         Random random = new Random();
+         pattern[0] = random.nextInt(4 - 1 + 1) + 1;
          chooseYourColor();
+
      }
 
  }
@@ -204,15 +189,10 @@ public class GameActivity extends AppCompatActivity {
     void playerAdds(){
         Log.i("MODE: ", modeResult);
 
-        onTouchSetup();
-
-
         /*In this mode the bot only plays once
          * The user repeats the pattern and adds one on their own.
          * The longest pattern you can muster before messing your self up is your score.
           * */
-
-
 
         /* Setup onclicks for each button */
         greenButton.setOnClickListener(new View.OnClickListener() {
@@ -252,11 +232,6 @@ public class GameActivity extends AppCompatActivity {
 
         int colorCode  = getColorCode(buttonIdIn);
 
-            /*check if button input is the one */
-
-
-
-
         //check player add flag
 
         if(paAddFlag == true){
@@ -278,12 +253,8 @@ public class GameActivity extends AppCompatActivity {
         if(turnPosition == patternCount) {
             turnPosition = 0;
 
-
-
             /* Set flag that makes next input add to pattern */
             paAddFlag = true;
-
-
 
             patternCount++;
             //nap(1200);
@@ -356,32 +327,10 @@ public class GameActivity extends AppCompatActivity {
     }//end  pa async task
 
 
-    //This probably is not needed.  I read the directions wrong.
-
-
-    /*
-    void paAddToPatern(){
-        Random random = new Random();
-        pattern[patternCount] = random.nextInt(4 - 1 + 1) + 1;
-
-    }
-
-    */
-
-    ////////////////////////////////////////////////////////////////////////
-
-
-    void chooseYourColor(){
-        Log.i("MODE: ", modeResult);
-
-
-
-    }
-
 
     void simonSays(){
 
-        onTouchSetup();
+
 
         /* Computer play pattern */
         ssBotPlay();
@@ -449,12 +398,6 @@ public class GameActivity extends AppCompatActivity {
             simonSays();
             return 0;
         }else {
-
-
-
-
-
-
 
             //nap(1200);
             return 0;
@@ -644,9 +587,6 @@ public class GameActivity extends AppCompatActivity {
 
 
 
-
-
-
     class ssBotTask extends AsyncTask<Void, Void, Void>{
 
         @Override
@@ -812,14 +752,197 @@ public class GameActivity extends AppCompatActivity {
             editor.putInt(prefKey, currentHighScore);
             editor.commit();
         }
-
-
-    }
-
-    void onTouchSetup() {
     }
 
 
+    void chooseYourColor(){
+        Log.i("MODE: ", modeResult);
+        /* bot turn */
+        cycBotPlay();
 
+
+
+         /* Setup onclicks for each button */
+        greenButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                cycInputCheck(R.id.green_button);
+            }
+        });
+
+        redButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                cycInputCheck(R.id.red_button);
+            }
+        });
+
+        blueButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                cycInputCheck(R.id.blue_button);
+            }
+        });
+
+        yellowButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                cycInputCheck(R.id.yellow_button);
+            }
+        });
+
+
+
+        Log.i("CYC: ", "Listeners Set");
+
+    }
+
+
+
+    int cycInputCheck(int buttonIdIn){
+        Log.i("METHOD: ", "cycInputCheck()");
+
+        int colorCode  = getColorCode(buttonIdIn);
+
+        //check player add flag
+
+        if(paAddFlag == true){
+            playSound(chooseButtonSound(buttonIdIn));
+            pattern[patternCount-1] = colorCode;
+            paAddFlag = false;
+            nap(1200);
+            chooseYourColor();
+            return 0;
+        }
+        else if(colorCode != pattern[turnPosition]){
+            playSound(failButtonSoundID);
+            playerScore = patternCount;
+            playerLoses();
+            return 0;
+        }
+
+        playSound(chooseButtonSound(buttonIdIn));
+        turnPosition++;
+            /*Check if turn is over*/
+        if(turnPosition == patternCount) {
+            turnPosition = 0;
+
+            /* Set flag that makes next input add to pattern */
+            paAddFlag = true;
+
+            patternCount++;
+            //nap(1200);
+
+
+            return 0;
+        }else {
+
+            //check change
+            playerScore = patternCount;
+            scoreTextView.setText("Score: " + playerScore);
+
+
+            //nap(600);
+            return 0;
+        }
+
+
+        //chooseYourColor();
+    }
+
+
+
+    private void cycBotPlay(){
+
+        Log.i("CYC_BOTPLAY:","STARTED patternCount = " + patternCount);
+        cycBotTask botTurn =  new cycBotTask();
+        botTurn.execute();
+
+    }
+
+
+
+    class cycBotTask extends AsyncTask<Void, Void, Void> {
+
+        @Override
+        protected Void doInBackground(Void... params) {
+
+
+            lockGameButtons();
+
+               int x3 = 0; //needed for bot to add to pattern
+
+            for (int x = 0; x < patternCount; x++) {
+                Log.i("X = ", "" + x);
+
+                final int x2 = x;  //PROBLEM HERE
+                x3 = x;
+                int y = 1 + 1;
+
+                final int colorCode = pattern[x2];
+                final int buttonID = getButtonId(colorCode);
+
+                runOnUiThread(new Runnable() {
+                    @Override
+                    public void run() {
+
+
+                        lightButton(buttonID);
+                    }
+                });
+
+                nap(700);
+
+                runOnUiThread(new Runnable() {
+                    @Override
+                    public void run() {
+
+                        turnOffButton(buttonID);
+                    }
+                });
+            }
+
+            if(isCyCFirstTurn == true){
+                isCyCFirstTurn = false;
+            }else {
+                x3++; //incrementing to get to next open spot in pattern
+
+                //get random number between 1 and 4
+                Random random = new Random();
+
+                //add new button to pattern and show
+                pattern[x3] = random.nextInt(4 - 1 + 1) + 1;
+
+                final int colorCode = pattern[x3];
+                final int buttonID = getButtonId(colorCode);
+
+                runOnUiThread(new Runnable() {
+                    @Override
+                    public void run() {
+
+
+                        lightButton(buttonID);
+                    }
+                });
+
+                nap(700);
+
+                runOnUiThread(new Runnable() {
+                    @Override
+                    public void run() {
+
+                        turnOffButton(buttonID);
+                    }
+                });
+                patternCount++;
+
+            }
+
+                unlockGameButtons();
+                return null;
+
+        }
+    }
 
 }

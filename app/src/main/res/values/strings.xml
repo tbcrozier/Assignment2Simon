@@ -7,14 +7,14 @@
 <string name="mode_question">Choose Game Mode</string>
 <string name="simon_says">Simon Says</string>
 <string name="player_adds">Player Adds</string>
-<string name="choose_color">Choose Your Color</string>
+<string name="choose_color">Copy and Add</string>
 <string name="blue_color">Blue</string>
 <string name="red_color">Red</string>
 <string name="green_color">Green</string>
 <string name="yellow_color">Yellow</string>
 <string name="about_game_name_1_tv">Simon Says</string>
 <string name="about_game_name_2_tv">Player Adds</string>
-<string name="about_game_name_3_tv">Choose Colors</string>
+<string name="about_game_name_3_tv">Copy and Add</string>
 <string name="play_simon_button">Play Simon</string>
 <string name="about_simon_button">About Simon</string>
 <string name="exit_button">Exit</string>
@@ -22,7 +22,7 @@
 <string name="high_Score_label"><u>High Scores</u></string>
 <string name="ssh_label"><u>Simon Says</u></string>
 <string name="pah_label"><u>Player Adds</u></string>
-<string name="cyc_label"><u>Choose Your Color</u></string>
+<string name="cyc_label"><u>Copy and Add</u></string>
 <string name="start_game_title">Simon</string>
 
 </resources>
