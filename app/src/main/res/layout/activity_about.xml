@@ -255,17 +255,56 @@
             android:background="@color/colorBlue">
         </LinearLayout>
 
+
+
         <TextView
             android:text="@string/about_game_name_1_tv"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:id="@+id/about_game_name_1_tv"
             android:textColor="@android:color/white"
-            android:textSize="20sp"
+            android:textSize="30sp"
             android:layout_gravity="center_vertical|center_horizontal|center"
             android:fontFamily="monospace"
             android:typeface="monospace"
             android:textStyle="normal|bold"
+            android:gravity="center_horizontal"
+            android:paddingTop="5dp"
+            android:layout_weight="1" />
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="10dp"
+            android:layout_height="match_parent"
+            android:background="@color/colorYellow">
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <!--Description of SimonSays Game-->
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:weightSum="1">
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="10dp"
+            android:layout_height="match_parent"
+            android:background="@color/colorBlue">
+        </LinearLayout>
+
+        <TextView
+            android:text="@string/sim_say_desc"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/about_game_desc_1_tv"
+            android:textColor="@android:color/white"
+            android:textSize="20sp"
+            android:layout_gravity="center_vertical|center_horizontal|center"
+            android:fontFamily="monospace"
+            android:typeface="monospace"
             android:gravity="center_horizontal"
             android:paddingTop="5dp"
             android:layout_weight="1"/>
@@ -299,11 +338,48 @@
             android:layout_height="wrap_content"
             android:id="@+id/about_game_name_2_tv"
             android:textColor="@android:color/white"
-            android:textSize="20sp"
+            android:textSize="30sp"
             android:layout_gravity="center_vertical|center_horizontal|center"
             android:fontFamily="monospace"
             android:typeface="monospace"
             android:textStyle="normal|bold"
+            android:gravity="center_horizontal"
+            android:paddingTop="15dp"
+            android:layout_weight="1"/>
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="10dp"
+            android:layout_height="match_parent"
+            android:background="@color/colorYellow">
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <!--Description of PlayerAdds Game -->
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:weightSum="1">
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="10dp"
+            android:layout_height="match_parent"
+            android:background="@color/colorBlue">
+        </LinearLayout>
+
+        <TextView
+            android:text="@string/play_ads_desc"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/about_game_desc_2_tv"
+            android:textColor="@android:color/white"
+            android:textSize="20sp"
+            android:layout_gravity="center_vertical|center_horizontal|center"
+            android:fontFamily="monospace"
+            android:typeface="monospace"
             android:gravity="center_horizontal"
             android:paddingTop="5dp"
             android:layout_weight="1"/>
@@ -316,7 +392,6 @@
         </LinearLayout>
 
     </LinearLayout>
-
 
     <!--Buttons & side color frame -->
     <LinearLayout
@@ -333,19 +408,19 @@
         </LinearLayout>
 
         <TextView
-            android:text="@string/about_game_name_3_tv"
+            android:text="@string/cyc_label"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:id="@+id/about_game_name_3_tv"
             android:textColor="@android:color/white"
-            android:textSize="20sp"
+            android:textSize="30sp"
             android:layout_gravity="center_vertical|center_horizontal|center"
             android:fontFamily="monospace"
             android:typeface="monospace"
-            android:textStyle="normal|bold"
             android:gravity="center_horizontal"
-            android:paddingTop="5dp"
-            android:layout_weight="1"/>
+            android:paddingTop="15dp"
+            android:layout_weight="1"
+            android:textStyle="normal|bold" />
 
         <LinearLayout
             android:orientation="vertical"
@@ -356,6 +431,162 @@
 
     </LinearLayout>
 
+    <!--Description of ChooseColors Game -->
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:weightSum="1">
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="10dp"
+            android:layout_height="match_parent"
+            android:background="@color/colorBlue">
+        </LinearLayout>
+
+        <TextView
+            android:text="@string/choose_color_desc"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/about_game_desc_3_tv"
+            android:textColor="@android:color/white"
+            android:textSize="20sp"
+            android:layout_gravity="center_vertical|center_horizontal|center"
+            android:fontFamily="monospace"
+            android:typeface="monospace"
+            android:gravity="center_horizontal"
+            android:paddingTop="5dp"
+            android:layout_weight="1"
+            android:paddingBottom="5dp" />
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="10dp"
+            android:layout_height="match_parent"
+            android:background="@color/colorYellow">
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <!--This layout does bottom horizontal colorful frame edging-->
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="10dp"
+        android:baselineAligned="false"
+        android:weightSum="4">
+
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/colorGreen"
+            android:layout_weight="1">
+        </LinearLayout>
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/colorYellow"
+            android:layout_weight="1">
+        </LinearLayout>
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/colorBlue"
+            android:layout_weight="1">
+        </LinearLayout>
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/colorRed"
+            android:layout_weight="1">
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:weightSum="1">
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="10dp"
+            android:layout_height="match_parent"
+            android:background="@color/colorBlue">
+        </LinearLayout>
+
+
+
+        <TextView
+            android:text="@string/attention"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/about_game_attention_tv"
+            android:textColor="@android:color/white"
+            android:textSize="20sp"
+            android:layout_gravity="center_vertical|center_horizontal|center"
+            android:fontFamily="monospace"
+            android:typeface="monospace"
+            android:textStyle="normal|bold"
+            android:gravity="center_horizontal"
+            android:paddingTop="10dp"
+            android:layout_weight="1" />
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="10dp"
+            android:layout_height="match_parent"
+            android:background="@color/colorYellow">
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:weightSum="1">
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="10dp"
+            android:layout_height="match_parent"
+            android:background="@color/colorBlue">
+        </LinearLayout>
+
+
+
+        <TextView
+            android:text="@string/good_luck"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/about_game_good_luck_tv"
+            android:textColor="@android:color/white"
+            android:textSize="30sp"
+            android:layout_gravity="center_vertical|center_horizontal|center"
+            android:fontFamily="monospace"
+            android:typeface="monospace"
+            android:textStyle="normal|bold"
+            android:gravity="center_horizontal"
+            android:paddingTop="5dp"
+            android:layout_weight="1"
+            android:paddingBottom="15dp" />
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="10dp"
+            android:layout_height="match_parent"
+            android:background="@color/colorYellow">
+        </LinearLayout>
+
+    </LinearLayout>
 
     <!--This layout does bottom horizontal colorful frame edging-->
     <LinearLayout

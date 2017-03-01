@@ -13,6 +13,8 @@ import android.widget.Button;
 import android.content.Intent;
 import android.util.Log;
 import android.app.Activity;
+
+import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.Random;
 import java.util.Set;
@@ -31,6 +33,7 @@ public class GameActivity extends AppCompatActivity {
 
     private SoundPool soundPool;
     private Set<Integer> soundsLoaded;
+
     Button greenButton;
     Button redButton;
     Button yellowButton;
@@ -64,6 +67,7 @@ public class GameActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_game);
 
+
         lockGameButtons();
 
 
@@ -86,6 +90,22 @@ public class GameActivity extends AppCompatActivity {
 
         playerScore = 0;
 
+        /*//rotation view code
+        if(savedInstanceState == null){
+
+            pattern = new int[100]; //100 should be a long enough pattern.
+            patternCount = 1;
+            playerScore = 0;
+            turnPosition = 0;
+        }else{
+            pattern = savedInstanceState.getIntArray("pattern");
+            patternCount = savedInstanceState.getInt("patternCount", 1);
+            playerScore = savedInstanceState.getInt("playerScore", 0);
+            turnPosition = savedInstanceState.getInt("turnPosition", 0);
+
+        }
+        //------------------------rotation*/
+
         scoreTextView = (TextView) findViewById(R.id.score_tv);
 
         pattern = new int[100]; //100 should be a long enough pattern.
@@ -101,6 +121,17 @@ public class GameActivity extends AppCompatActivity {
 
     }
 
+/*    // rotation function
+    protected void onSaveInstanceState(Bundle outState){
+        super.onSaveInstanceState(outState);
+
+        outState.putIntegerArrayList("pattern", ArrayList<>);
+        outState.putInt("playerScore", playerScore);
+        outState.putInt("patternCount", patternCount);
+        outState.putInt("turnPosition", turnPosition);
+
+    }
+//-----------------------------*/
 
     @Override
     protected void onResume() {
@@ -149,8 +180,6 @@ public class GameActivity extends AppCompatActivity {
         }
 
     }
-
-
 
  void play( String modeIn){
 

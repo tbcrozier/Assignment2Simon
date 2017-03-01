@@ -22,10 +22,14 @@
 <string name="high_Score_label"><u>High Scores</u></string>
 <string name="ssh_label"><u>Simon Says</u></string>
 <string name="pah_label"><u>Player Adds</u></string>
-<string name="cyc_label"><u>Copy and Add</u></string>
+<string name="cyc_label"><u>Choose Color</u></string>
 <string name="start_game_title">Simon</string>
 <string name="start_game">Start Game</string>
 <string name="score">Score</string>
 <string name="click">Click to </string>
-
+<string name="play_ads_desc">Create your own pattern!</string>
+<string name="sim_say_desc">Follow along as long as possible!</string>
+<string name="choose_color_desc">Repeat pattern then add to it!</string>
+<string name="attention">Pay Very Close Attention</string>
+<string name="good_luck">Good Luck!</string>
 </resources>
