@@ -26,5 +26,6 @@
 <string name="start_game_title">Simon</string>
 <string name="start_game">Start Game</string>
 <string name="score">Score</string>
+<string name="click">Click to </string>
 
 </resources>

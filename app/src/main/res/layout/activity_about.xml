@@ -83,8 +83,6 @@
 
     </LinearLayout>
 
-
-
     <!--This layout does bottom horizontal colorful frame edging-->
     <LinearLayout
         android:orientation="horizontal"
@@ -162,8 +160,6 @@
         </LinearLayout>
 
     </LinearLayout>
-
-
 
     <!--This layout does bottom horizontal colorful frame edging-->
     <LinearLayout
