@@ -263,7 +263,7 @@
             android:layout_height="wrap_content"
             android:id="@+id/about_game_name_1_tv"
             android:textColor="@android:color/white"
-            android:textSize="30sp"
+            android:textSize="25sp"
             android:layout_gravity="center_vertical|center_horizontal|center"
             android:fontFamily="monospace"
             android:typeface="monospace"
@@ -338,13 +338,13 @@
             android:layout_height="wrap_content"
             android:id="@+id/about_game_name_2_tv"
             android:textColor="@android:color/white"
-            android:textSize="30sp"
+            android:textSize="25sp"
             android:layout_gravity="center_vertical|center_horizontal|center"
             android:fontFamily="monospace"
             android:typeface="monospace"
             android:textStyle="normal|bold"
             android:gravity="center_horizontal"
-            android:paddingTop="15dp"
+            android:paddingTop="5dp"
             android:layout_weight="1"/>
 
         <LinearLayout
@@ -408,17 +408,17 @@
         </LinearLayout>
 
         <TextView
-            android:text="@string/cyc_label"
+            android:text="@string/choose_color"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:id="@+id/about_game_name_3_tv"
             android:textColor="@android:color/white"
-            android:textSize="30sp"
+            android:textSize="25sp"
             android:layout_gravity="center_vertical|center_horizontal|center"
             android:fontFamily="monospace"
             android:typeface="monospace"
             android:gravity="center_horizontal"
-            android:paddingTop="15dp"
+            android:paddingTop="5dp"
             android:layout_weight="1"
             android:textStyle="normal|bold" />
 
@@ -523,22 +523,6 @@
         </LinearLayout>
 
 
-
-        <TextView
-            android:text="@string/attention"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:id="@+id/about_game_attention_tv"
-            android:textColor="@android:color/white"
-            android:textSize="20sp"
-            android:layout_gravity="center_vertical|center_horizontal|center"
-            android:fontFamily="monospace"
-            android:typeface="monospace"
-            android:textStyle="normal|bold"
-            android:gravity="center_horizontal"
-            android:paddingTop="10dp"
-            android:layout_weight="1" />
-
         <LinearLayout
             android:orientation="vertical"
             android:layout_width="10dp"
@@ -575,9 +559,7 @@
             android:typeface="monospace"
             android:textStyle="normal|bold"
             android:gravity="center_horizontal"
-            android:paddingTop="5dp"
-            android:layout_weight="1"
-            android:paddingBottom="15dp" />
+            android:layout_weight="1" />
 
         <LinearLayout
             android:orientation="vertical"
